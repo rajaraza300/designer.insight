@@ -51,6 +51,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
     'All',
     'Brand Identity',
     'Print & Packaging',
+    'Social Media',
     'UI/UX Design',
     'Web Design',
     'Presentation Design',

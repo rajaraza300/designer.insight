@@ -169,6 +169,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuote }) => {
               </li>
               <li>
                 <button
+                  onClick={() => handleNav('testimonials')}
+                  className="text-neutral-400 hover:text-[#f84900] transition-colors cursor-pointer"
+                >
+                  Testimonials
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => handleNav('pricing')}
                   className="text-neutral-400 hover:text-[#f84900] transition-colors cursor-pointer"
                 >

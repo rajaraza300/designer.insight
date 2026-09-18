@@ -7,7 +7,9 @@ import {
   BlogPost,
   Award,
   ProcessStep,
+  TestimonialItem,
 } from '../types';
+import { SOCIAL_MEDIA_PROJECTS } from './socialMediaProjects';
 
 // Official Designer Insight Logo & Favicon Assets
 export const SITE_CONFIG = {
@@ -364,6 +366,77 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       'Marketing Flyer Collateral',
       'High-Res Print Production Files',
       'Digital Social Share Graphics',
+    ],
+  },
+  // --- PRINT & PACKAGING: STANDEE & TRANSACTIONAL STATIONERY ---
+  {
+    id: 'modern-standee-banner-design',
+    title: 'Modern Standee Roll-Up Banner Design',
+    category: 'Print & Packaging',
+    categoryLabel: '/ Roll-Up Standee & Signage',
+    image: '/portfolio/f1-amore-homes-panaflex-design.jpeg',
+    client: 'Corporate Summit & Retail Exhibitions',
+    year: '2025',
+    overview: 'High-impact roll-up standee banner created by Designer Insight for corporate events, retail displays, and summits. Engineered with eye-catching visual hierarchy, vivid typography, and high-resolution print precision.',
+    deliverables: [
+      'Retractable Roll-Up Banner (33x81 in)',
+      'Event Exhibition Signage',
+      'Vector Print-Ready Artwork',
+      'Color-Calibrated CMYK Layout',
+      'Promotional Display Guides',
+    ],
+  },
+  {
+    id: 'modern-receipt-invoice-design',
+    title: 'Modern Receipt & Corporate Invoice Design',
+    category: 'Print & Packaging',
+    categoryLabel: '/ Transactional Stationery & Receipts',
+    image: '/portfolio/health-care-stationery-collateral.png',
+    client: 'Enterprise Commerce & Billing Systems',
+    year: '2025',
+    overview: 'Contemporary corporate receipt and transactional invoice design by Designer Insight. Designed for seamless clarity, official recordkeeping, digital POS compatibility, and clean corporate identity integration.',
+    deliverables: [
+      'Modern Receipt & Invoice Templates',
+      'Duplicate Billing Memo Formats',
+      'Vector Tabular Accounting Sheets',
+      'Thermal & A4 Print Specifications',
+      'Branded Digital PDF Layouts',
+    ],
+  },
+  // --- SOCIAL MEDIA & MARKETING CAMPAIGNS (User Specified Exact 31 Projects) ---
+  ...SOCIAL_MEDIA_PROJECTS,
+  {
+    id: 'contemporary-brand-identity-suite',
+    title: 'Creative Brand Identity & Visual Guidelines',
+    category: 'Brand Identity',
+    categoryLabel: '/ Brand Identity Manual',
+    image: '/portfolio/7d218e219313163.Y3JvcCw1MDAwLDM5MTAsMCww.png',
+    client: 'Designer Insight Client Partner',
+    year: '2025',
+    behanceUrl: 'https://www.behance.net/gallery/219313163',
+    overview: 'Strategic brand identity system and visual guidelines crafted by Designer Insight. Highlights comprehensive brand collateral, typographic standards, and logo mark variations.',
+    deliverables: [
+      'Visual Identity System',
+      'Brand Style Guide',
+      'Collateral Guidelines',
+      'Vector Assets Suite',
+    ],
+  },
+  {
+    id: 'luxury-packaging-brand-manual',
+    title: 'Bespoke Corporate Branding & Packaging Manual',
+    category: 'Brand Identity',
+    categoryLabel: '/ Brand Identity & Packaging',
+    image: '/portfolio/171130233166869.Y3JvcCwzMDg4LDI0MTYsMCww.png',
+    client: 'Designer Insight Client Partner',
+    year: '2024',
+    behanceUrl: 'https://www.behance.net/gallery/171130233',
+    overview: 'Premium corporate branding manual and custom packaging layout engineered by Designer Insight. Defining packaging structures, brand tone, and tactile print finishes.',
+    deliverables: [
+      'Packaging Specifications',
+      'Corporate Brand Guidelines',
+      'Print Finish Standards',
+      'Digital Presentation Kit',
     ],
   },
   // --- ADDITIONAL AGENCY WORKS ---
@@ -767,3 +840,114 @@ By engineering micro-animations, clear typographic hierarchies, and streamlined 
 Discover how our recent e-commerce and mobile app builds achieved an average 38% increase in task completion rates through deliberate interaction design.`,
   },
 ];
+
+// ==========================================
+// 8. CLIENT TESTIMONIALS & FEEDBACK DATA
+// ==========================================
+export const TESTIMONIALS_DATA: TestimonialItem[] = [
+  {
+    id: 'f1-marketing-testimonial',
+    clientName: 'Malik Usman',
+    clientRole: 'Head of Marketing & Sales',
+    company: 'F1 Marketing (New City Paradise)',
+    projectType: 'Outdoor Panaflex & Marketing Collateral',
+    quote:
+      'Designer Insight exceeded every expectation. The massive outdoor panaflex billboards and booking office signage captured immediate attention across the highway. Booking inquiries surged by over 45% within the first four weeks of installation. Their attention to print production tolerances and color accuracy is unmatched.',
+    rating: 5,
+    highlightMetric: '+45% Booking Inquiries',
+    date: 'January 2026',
+    verified: true,
+  },
+  {
+    id: 'mega-drive-testimonial',
+    clientName: 'Jordan Vance',
+    clientRole: 'Racing Operations Director',
+    company: 'Mega Drive Destructions',
+    projectType: 'Motorsport Brand Identity & Event Collateral',
+    quote:
+      'Finding an agency that truly understands the adrenaline and mechanical precision of motorsport is rare. Designer Insight delivered a ferocious mascot, racing typography, and trackside vertical banners that electrify our fans on race days. Our merchandise sales doubled right after the brand reveal.',
+    rating: 5,
+    highlightMetric: '2x Merch Sales Growth',
+    date: 'December 2025',
+    verified: true,
+  },
+  {
+    id: 'nano-wrap-testimonial',
+    clientName: 'Tariq Al-Mansoor',
+    clientRole: 'Managing Director',
+    company: 'Nano Wrap Automotive PPF',
+    projectType: 'Automotive Brand Guidelines & Packaging',
+    quote:
+      'We operate in the luxury supercar protection industry where mediocrity is not an option. The comprehensive brand identity manual, matte packaging suites, and supercar decal guidelines crafted by Designer Insight have positioned us as a gold standard among authorized dealerships across the GCC and Europe.',
+    rating: 5,
+    highlightMetric: '100% Dealer Adoption',
+    date: 'January 2026',
+    verified: true,
+  },
+  {
+    id: 'round-cube-testimonial',
+    clientName: 'Sarah Jenkins',
+    clientRole: 'VP of Brand Experience',
+    company: 'Round Cube Pvt. Ltd',
+    projectType: 'Enterprise Tech Identity & Spatial Signage',
+    quote:
+      'The 3D geometric corporate mark, reception architectural signage, and debossed hardcover identity manuals created by Designer Insight gave our enterprise software company an unmistakably premium posture. In high-stakes B2B sales meetings, our brand authority now leads the conversation.',
+    rating: 5,
+    highlightMetric: 'Enterprise Rebrand Success',
+    date: 'November 2025',
+    verified: true,
+  },
+  {
+    id: 'health-care-testimonial',
+    clientName: 'Dr. Hamza Farooq',
+    clientRole: 'Medical Director',
+    company: 'Health Care Medical Center',
+    projectType: 'Corporate Stationery & Patient Experience',
+    quote:
+      'Pristine execution across official letterheads, executive business cards, and patient consultation folders. Designer Insight balanced clinical authority with calming fluid aesthetics. Feedback from both our medical board and visiting patients has been overwhelmingly positive.',
+    rating: 5,
+    highlightMetric: 'Complete Hospital Suite',
+    date: 'February 2026',
+    verified: true,
+  },
+  {
+    id: 'empiric-ventures-testimonial',
+    clientName: 'Elena Rostova',
+    clientRole: 'Founding Partner',
+    company: 'Empiric Ventures',
+    projectType: 'Scientific VC Identity & Pitch Deck',
+    quote:
+      'Designer Insight transformed complex deep-tech concepts and mathematical models into a breathtaking 45-slide keynote deck. The visual hierarchy and custom iconography were critical in closing our $3.2M seed round. Their design sensibility is sharp, disciplined, and world-class.',
+    rating: 5,
+    highlightMetric: '$3.2M Capital Secured',
+    date: 'October 2025',
+    verified: true,
+  },
+  {
+    id: 'finflow-testimonial',
+    clientName: 'Marcus Sterling',
+    clientRole: 'Chief Product Officer',
+    company: 'FinFlow Inc.',
+    projectType: 'Mobile App UI/UX & Design System',
+    quote:
+      'Intuitive micro-interactions, silky smooth dark-mode ergonomics, and zero cognitive friction. Daily active user engagement jumped 38% after we shipped the redesign. Working with Designer Insight felt like having an elite Silicon Valley product design team on speed dial.',
+    rating: 5,
+    highlightMetric: '+38% DAU Engagement',
+    date: 'September 2025',
+    verified: true,
+  },
+  {
+    id: 'urbanwear-testimonial',
+    clientName: 'Chloe Dubois',
+    clientRole: 'Creative Director',
+    company: 'UrbanWear Apparel',
+    projectType: 'E-Commerce Experience & Digital Flagship',
+    quote:
+      'From wireframes to production-ready design tokens, they crafted a modern shopping experience that feels lightning-fast and effortless. Checkout bounce rates plummeted and our customer conversion rate rose 27% in Q1. An exceptional agency with genuine artistic taste.',
+    rating: 5,
+    highlightMetric: '+27% Conversion Lift',
+    date: 'August 2025',
+    verified: true,
+  },
+];
+

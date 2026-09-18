@@ -30,6 +30,20 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         const filename = initialSrc.replace('/uploads/', '');
         list.push(`https://designerinsight.online/wp-content/uploads/2025/12/${filename}`);
       }
+
+      // If it's a local /portfolio/ path, also support encoded URI and extension variants
+      if (initialSrc.startsWith('/portfolio/')) {
+        const encoded = encodeURI(initialSrc);
+        if (encoded !== initialSrc && !list.includes(encoded)) {
+          list.push(encoded);
+        }
+        if (initialSrc.endsWith('.webp')) {
+          const jpgVersion = initialSrc.replace(/\.webp$/, '.jpg');
+          const pngVersion = initialSrc.replace(/\.webp$/, '.png');
+          if (!list.includes(jpgVersion)) list.push(jpgVersion);
+          if (!list.includes(pngVersion)) list.push(pngVersion);
+        }
+      }
     }
     if (fallback && !list.includes(fallback)) {
       list.push(fallback);

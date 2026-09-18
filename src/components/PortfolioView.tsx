@@ -21,6 +21,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
     'All',
     'Brand Identity',
     'Print & Packaging',
+    'Social Media',
     'UI/UX Design',
     'Web Design',
     'Presentation Design',

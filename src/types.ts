@@ -3,10 +3,25 @@ export type PageId =
   | 'about'
   | 'services'
   | 'portfolio'
+  | 'testimonials'
   | 'pricing'
   | 'blogs'
   | 'faqs'
   | 'contact';
+
+export interface TestimonialItem {
+  id: string;
+  clientName: string;
+  clientRole: string;
+  company: string;
+  projectType: string;
+  quote: string;
+  rating: number;
+  highlightMetric?: string;
+  date?: string;
+  avatar?: string;
+  verified?: boolean;
+}
 
 export interface ServiceItem {
   id: string;

@@ -28,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
     { id: 'about', label: 'About us' },
     { id: 'services', label: 'Service' },
     { id: 'portfolio', label: 'Portfolio' },
+    { id: 'testimonials', label: 'Testimonials' },
     { id: 'pricing', label: 'Pricing Plan' },
     { id: 'blogs', label: 'Blogs' },
     { id: 'faqs', label: 'FAQs' },

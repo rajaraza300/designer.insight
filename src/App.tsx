@@ -6,6 +6,7 @@ import { HomeView } from './components/HomeView';
 import { AboutView } from './components/AboutView';
 import { ServicesView } from './components/ServicesView';
 import { PortfolioView } from './components/PortfolioView';
+import { TestimonialsView } from './components/TestimonialsView';
 import { PricingView } from './components/PricingView';
 import { BlogsView } from './components/BlogsView';
 import { FaqsView } from './components/FaqsView';
@@ -62,6 +63,12 @@ export const App: React.FC = () => {
           <PortfolioView
             onNavigate={handleNavigate}
             onOpenProject={(proj) => setSelectedProject(proj)}
+            onOpenQuote={() => setIsQuoteOpen(true)}
+          />
+        )}
+        {activePage === 'testimonials' && (
+          <TestimonialsView
+            onNavigate={handleNavigate}
             onOpenQuote={() => setIsQuoteOpen(true)}
           />
         )}
