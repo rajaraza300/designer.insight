@@ -6,7 +6,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'BioCarburante "Don\'t Wait For Change" Investor Pitch Presentation',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
-    image: '/portfolio/076_PPT-(Pitch-deck)-Presentation-design-For-BioCarburante.png',
+    image: '/portfolio/076-biocarburante-pitch.webp',
     client: 'BioCarburante Tire Company',
     year: '2025',
     overview:
@@ -24,7 +24,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'BioCarburante "Building a Circular Future" Platform Pitch Deck',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
-    image: '/portfolio/077_PPT-(Pitch-deck)-Presentation-Design-For-BioCarborante.jpeg',
+    image: '/portfolio/077-biocarburante-pitch.jpeg',
     client: 'BioCarburante Company (Mesa, Arizona)',
     year: '2025',
     overview:
@@ -42,7 +42,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'Sollentuna Kommun "Ett År Som Gör Skillnad" Municipal Presentation',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
-    image: '/portfolio/078_(Pitch-deck)-Presentation-For-Technical-Department\'s.png',
+    image: '/portfolio/078-sollentuna-presentation.webp',
     client: 'Sollentuna Kommun (Sweden Technical Department)',
     year: '2025',
     overview:
@@ -60,7 +60,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'Neon District "Own The Streets" Urban Streetwear Brand Pitch Deck',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
-    image: '/portfolio/079_PPT-(Pitch-deck)-Presentation-Design-for-Neon-District.jpeg',
+    image: '/portfolio/079-neon-district-pitch.jpeg',
     client: 'Neon District Fashion Brand',
     year: '2025',
     overview:
@@ -78,7 +78,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'Al Sayyed Arcade Luxury Real Estate Catalogue & Presentation',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
-    image: '/portfolio/080_Catalogue-Design-for-Al-Sayyed-Arcade-Real-Estate.png',
+    image: '/portfolio/080-al-sayyed-arcade.webp',
     client: 'Al Sayyed Builders & Land Developers (SJK Group)',
     year: '2025',
     overview:
@@ -96,7 +96,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'Sardar Arcade - Sunway Marketing Luxury Penthouse Catalogue',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
-    image: '/portfolio/081_Catalogue-Design-for-Sunway-Marketing-Real-Estate.png',
+    image: '/portfolio/081-sunway-marketing.webp',
     client: 'Sardar Developers & Sunway Marketing (MPCHS B-17 Islamabad)',
     year: '2025',
     overview:
@@ -114,7 +114,7 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     title: 'AAA Square 7-Story Commercial Complex Catalogue & Pitch Deck',
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
-    image: '/portfolio/082_Catalogue-Design-for-AAA-Square-Real-Estate-Client.png',
+    image: '/portfolio/082-aaa-square.webp',
     client: 'AAA Estate (Pvt) Ltd (Faisal Hills)',
     year: '2025',
     overview:
