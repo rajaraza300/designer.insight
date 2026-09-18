@@ -404,42 +404,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       'Branded Digital PDF Layouts',
     ],
   },
-  // --- SOCIAL MEDIA & MARKETING CAMPAIGNS (User Specified Exact 31 Projects) ---
+  // --- SOCIAL MEDIA & MARKETING CAMPAIGNS (User Specified Exact 30 Projects) ---
   ...SOCIAL_MEDIA_PROJECTS,
-  {
-    id: 'contemporary-brand-identity-suite',
-    title: 'Creative Brand Identity & Visual Guidelines',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
-    image: '/portfolio/7d218e219313163.Y3JvcCw1MDAwLDM5MTAsMCww.png',
-    client: 'Designer Insight Client Partner',
-    year: '2025',
-    behanceUrl: 'https://www.behance.net/gallery/219313163',
-    overview: 'Strategic brand identity system and visual guidelines crafted by Designer Insight. Highlights comprehensive brand collateral, typographic standards, and logo mark variations.',
-    deliverables: [
-      'Visual Identity System',
-      'Brand Style Guide',
-      'Collateral Guidelines',
-      'Vector Assets Suite',
-    ],
-  },
-  {
-    id: 'luxury-packaging-brand-manual',
-    title: 'Bespoke Corporate Branding & Packaging Manual',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity & Packaging',
-    image: '/portfolio/171130233166869.Y3JvcCwzMDg4LDI0MTYsMCww.png',
-    client: 'Designer Insight Client Partner',
-    year: '2024',
-    behanceUrl: 'https://www.behance.net/gallery/171130233',
-    overview: 'Premium corporate branding manual and custom packaging layout engineered by Designer Insight. Defining packaging structures, brand tone, and tactile print finishes.',
-    deliverables: [
-      'Packaging Specifications',
-      'Corporate Brand Guidelines',
-      'Print Finish Standards',
-      'Digital Presentation Kit',
-    ],
-  },
   // --- ADDITIONAL AGENCY WORKS ---
   {
     id: 'empiric-brand-identity',

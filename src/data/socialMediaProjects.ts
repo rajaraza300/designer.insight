@@ -511,21 +511,4 @@ export const SOCIAL_MEDIA_PROJECTS: PortfolioProject[] = [
       'Plot Booking Promotional Ads',
     ],
   },
-  {
-    id: '052-f1-marketing',
-    title: 'Social Media Post Design for F1 Marketing Real Estate',
-    category: 'Social Media',
-    categoryLabel: '/ Real Estate Social Campaigns',
-    image: '/portfolio/052_Social-Media-Post-Design-for-F1-Marketing-Real-Estate.webp',
-    client: 'F1 Marketing Real Estate',
-    year: '2025',
-    overview: 'New City Phase II, Sydney Hawks luxury commercial towers, Eid-ul-Adha festive booking, and Kashmir Day awareness in striking black, red, and gold.',
-    deliverables: [
-      'Sydney Hawks Tower Ads',
-      'New City Phase II Teasers',
-      'Eid-ul-Adha Booking Promos',
-      'Kashmir Day Solidarity Creatives',
-      'Jumma Mubarak Gold Posters',
-    ],
-  },
 ];

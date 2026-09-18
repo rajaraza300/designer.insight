@@ -42,9 +42,38 @@ export const HomeView: React.FC<HomeViewProps> = ({
 }) => {
   const [portfolioFilter, setPortfolioFilter] = useState<string>('All');
 
+  // Curate a balanced mix across all categories for the "All" view on Home
+  const allMixedProjects = React.useMemo(() => {
+    const categoryOrder: Array<PortfolioProject['category']> = [
+      'Brand Identity',
+      'Social Media',
+      'Presentation Design',
+      'Print & Packaging',
+      'Web Design',
+      'UI/UX Design',
+    ];
+
+    const byCat: Record<string, PortfolioProject[]> = {};
+    categoryOrder.forEach((cat) => {
+      byCat[cat] = PORTFOLIO_PROJECTS.filter((p) => p.category === cat);
+    });
+
+    const result: PortfolioProject[] = [];
+    const maxLen = Math.max(...categoryOrder.map((cat) => byCat[cat]?.length || 0));
+
+    for (let i = 0; i < maxLen; i++) {
+      for (const cat of categoryOrder) {
+        if (byCat[cat] && byCat[cat][i]) {
+          result.push(byCat[cat][i]);
+        }
+      }
+    }
+    return result.slice(0, 9);
+  }, []);
+
   const filteredProjects =
     portfolioFilter === 'All'
-      ? PORTFOLIO_PROJECTS.slice(0, 9)
+      ? allMixedProjects
       : PORTFOLIO_PROJECTS.filter((p) => p.category === portfolioFilter);
 
   const categories = [
