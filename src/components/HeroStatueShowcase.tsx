@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Award, Palette } from 'lucide-react';
-import cleanDavidImg from '../assets/images/clean_david_statue_1789725904544.jpg';
+import { Award, Palette } from 'lucide-react';
 
 export const HeroStatueShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,19 +28,7 @@ export const HeroStatueShowcase: React.FC = () => {
       onMouseLeave={handleMouseLeave}
       className="relative w-full max-w-[480px] lg:max-w-[520px] min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] flex items-center justify-center select-none mx-auto py-2"
     >
-      {/* 1. Ambient Warm Orange Glow behind the statue */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-        <div className="w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-gradient-to-tr from-[#f84900]/30 via-[#ff6a1a]/18 to-transparent blur-[90px] animate-pulse" />
-        <div className="absolute w-[220px] sm:w-[280px] h-[220px] sm:h-[280px] rounded-full bg-[#f84900]/22 blur-[60px]" />
-      </div>
-
-      {/* 2. Delicate Outer Orbit Accent Rings */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
-        <div className="w-[360px] sm:w-[440px] h-[360px] sm:h-[440px] rounded-full border border-[#f84900]/15 border-dashed animate-spin [animation-duration:50s]" />
-        <div className="absolute w-[300px] sm:w-[380px] h-[300px] sm:h-[380px] rounded-full border border-[#f84900]/10" />
-      </div>
-
-      {/* 3. Pure Free-Standing Classical Statue (No Card, No Box, No Hard Borders) */}
+      {/* Classical Statue Free-Standing (Zero background shapes, zero orange outline rings) */}
       <motion.div
         animate={{
           x: mousePos.x,
@@ -63,23 +50,22 @@ export const HeroStatueShowcase: React.FC = () => {
           }}
           className="relative group cursor-pointer flex items-center justify-center"
         >
-          {/* Free-standing Statue without bounding box or card border */}
+          {/* Free-standing Statue without any background shape or outlines */}
           <div className="relative flex items-center justify-center">
-            {/* The Clean Marble Statue with soft gradient fade mask so it blends seamlessly */}
             <img
-              src={cleanDavidImg}
+              src="/statue-transparent.png"
               alt="Designer Insight Classical Marble Sculpture"
-              referrerPolicy="no-referrer"
-              className="w-[300px] sm:w-[370px] lg:w-[410px] h-auto max-h-[460px] sm:max-h-[520px] object-contain drop-shadow-[0_20px_45px_rgba(248,73,0,0.28)] transition-transform duration-700 group-hover:scale-105"
+              className="w-[280px] sm:w-[350px] lg:w-[390px] h-auto max-h-[460px] sm:max-h-[520px] object-contain transition-transform duration-700 group-hover:scale-105 pointer-events-auto filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
               style={{
-                maskImage: 'radial-gradient(ellipse 85% 90% at 50% 48%, black 65%, transparent 100%)',
-                WebkitMaskImage: 'radial-gradient(ellipse 85% 90% at 50% 48%, black 65%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
               }}
+              loading="eager"
             />
 
             {/* Subtle light glint spark on the shoulder */}
             <motion.div
-              animate={{ opacity: [0.3, 0.9, 0.3], scale: [0.85, 1.15, 0.85] }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [0.85, 1.15, 0.85] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute top-1/3 right-8 w-2 h-2 rounded-full bg-white blur-[1px] pointer-events-none"
             />

@@ -133,6 +133,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
             className="lg:hidden bg-[#0a0a0d] border-b border-[#f84900]/20 px-4 pt-3 pb-6 overflow-hidden"
           >
             <div className="flex flex-col gap-1.5">
+              <div className="px-3 py-2 pb-3 mb-1 border-b border-neutral-800/80 flex items-center justify-between">
+                <img src="/Designer-Insight-Logo-White-1.png" alt="Designer Insight" className="h-8 w-auto object-contain" />
+                <span className="text-[11px] font-mono tracking-widest text-[#f84900] uppercase font-bold">Agency Menu</span>
+              </div>
               {navItems.map((item) => {
                 const isActive = activePage === item.id;
                 return (

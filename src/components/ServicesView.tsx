@@ -57,12 +57,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate, onOpenQu
           {SERVICES_DATA.map((service, idx) => (
             <motion.div
               key={service.id}
+              id={`service-card-${service.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="group p-8 rounded-3xl bg-neutral-950 border border-neutral-800 hover:border-[#f84900]/60 transition-all duration-300 flex flex-col justify-between shadow-xl hover:shadow-[0_0_30px_rgba(248,73,0,0.15)]"
+              whileHover={{ y: -7, scale: 1.02 }}
+              className="group p-8 rounded-3xl bg-neutral-950 border border-neutral-800/90 hover:border-[#f84900]/60 transition-all duration-300 flex flex-col justify-between shadow-xl shadow-black/40 hover:shadow-[0_20px_45px_-12px_rgba(248,73,0,0.28),0_0_25px_rgba(248,73,0,0.12)]"
             >
               <div>
                 {/* Header with Number and Icon */}
@@ -153,12 +154,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate, onOpenQu
             {PROCESS_STEPS.map((step, idx) => (
               <motion.div
                 key={step.number}
+                id={`process-step-card-${step.number}`}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="p-6 rounded-3xl bg-neutral-950 border border-neutral-800/80 relative flex flex-col justify-between hover:border-[#f84900]/40 transition-all"
+                whileHover={{ y: -6, scale: 1.025 }}
+                className="p-6 rounded-3xl bg-neutral-950 border border-neutral-800/80 relative flex flex-col justify-between hover:border-[#f84900]/50 transition-all duration-300 shadow-md hover:shadow-[0_14px_30px_-8px_rgba(248,73,0,0.22)] cursor-default"
               >
                 <div>
                   <span className="text-3xl font-black text-[#f84900] mb-4 block">

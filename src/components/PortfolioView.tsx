@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageId, PortfolioProject } from '../types';
 import { PORTFOLIO_PROJECTS, CLIENT_LOGOS } from '../data/siteData';
-import { ArrowUpRight, Sparkles, Eye } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Eye, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -20,10 +20,10 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
   const categories = [
     'All',
     'Brand Identity',
+    'Print & Packaging',
     'UI/UX Design',
-    'Social Media',
-    'Presentation Design',
     'Web Design',
+    'Presentation Design',
   ];
 
   const filteredProjects =
@@ -93,26 +93,45 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
             <motion.div
               layout
               key={project.id}
+              id={`portfolio-project-card-${project.id}`}
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -7, scale: 1.02 }}
               onClick={() => onOpenProject(project)}
-              className="group cursor-pointer rounded-3xl overflow-hidden bg-neutral-950 border border-neutral-800 hover:border-[#f84900]/50 transition-all duration-300 flex flex-col shadow-xl hover:shadow-[0_0_30px_rgba(248,73,0,0.15)]"
+              className="group cursor-pointer rounded-3xl overflow-hidden bg-neutral-950 border border-neutral-800/90 hover:border-[#f84900]/60 transition-all duration-300 flex flex-col shadow-xl shadow-black/40 hover:shadow-[0_20px_45px_-12px_rgba(248,73,0,0.28),0_0_25px_rgba(248,73,0,0.12)]"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
+                {project.behanceUrl && (
+                  <div className="absolute top-3.5 right-3.5 z-10 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#0057ff]/50 text-[#3b82f6] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0057ff] animate-pulse" />
+                    <span>Behance</span>
+                  </div>
+                )}
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
                   fallbackTitle={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 p-4">
                   <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#f84900] to-[#ff6a1a] text-white font-bold text-xs shadow-xl">
                     <Eye className="w-3.5 h-3.5" />
                     <span>View Case Study</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
+                  {project.behanceUrl && (
+                    <a
+                      href={project.behanceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0057ff]/90 hover:bg-[#0057ff] text-white font-semibold text-[11px] shadow-lg transition-transform hover:scale-105"
+                    >
+                      <span>Open on Behance</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between">

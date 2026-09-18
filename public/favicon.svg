@@ -1,13 +1,13 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'>
-  <rect width='120' height='120' rx='28' fill='#070709' />
-  <g transform='translate(-12, -10) scale(1)'>
-    <!-- Outer Arc (Right) -->
-    <path d='M 72,8 A 62 62 0 0 1 72,132 L 72,116 A 46 46 0 0 0 72,24 Z' fill='#f84900' />
-    <!-- Mid Ring (Left) -->
-    <path d='M 72,34 A 36 36 0 0 0 72,106 L 72,92 A 22 22 0 0 1 72,48 Z' fill='#f84900' />
-    <!-- Mid Ring (Right) -->
-    <path d='M 72,34 A 36 36 0 0 1 72,106 L 72,92 A 22 22 0 0 0 72,48 Z' fill='#f84900' />
-    <!-- Pupil (Left) -->
-    <path d='M 72,57 A 13 13 0 0 0 72,83 Z' fill='#f84900' />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Official Designer Insight Simple Icon (Favicon) -->
+  <g fill="#f84900">
+    <!-- Outer Arc (Right side) -->
+    <path d="M 256,40 A 216,216 0 0,1 256,472 L 256,416 A 160,160 0 0,0 256,96 Z" />
+    <!-- Middle Ring (Left half) -->
+    <path d="M 256,128 A 128,128 0 0,0 256,384 L 256,332 A 76,76 0 0,1 256,180 Z" />
+    <!-- Middle Ring (Right half) -->
+    <path d="M 256,128 A 128,128 0 0,1 256,384 L 256,332 A 76,76 0 0,0 256,180 Z" />
+    <!-- Center Semicircle Pupil (Left half) -->
+    <path d="M 256,210 A 46,46 0 0,0 256,302 Z" />
   </g>
 </svg>

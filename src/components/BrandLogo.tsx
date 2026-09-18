@@ -5,6 +5,7 @@ interface BrandLogoProps {
   className?: string;
   iconOnly?: boolean;
   showTagline?: boolean;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
@@ -12,72 +13,44 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = '',
   iconOnly = false,
   showTagline = false,
+  size = 'md',
 }) => {
-  const isDarkText = variant === 'dark';
-  const textColor = isDarkText ? 'text-neutral-950' : 'text-white';
-  const taglineColor = isDarkText ? 'text-neutral-600' : 'text-neutral-400';
+  const heightClasses = {
+    sm: 'h-8 sm:h-9',
+    md: 'h-10 sm:h-11 md:h-12',
+    lg: 'h-12 sm:h-14 md:h-16',
+  }[size];
+
+  const iconHeightClasses = {
+    sm: 'h-8 w-8',
+    md: 'h-10 w-10',
+    lg: 'h-12 w-12',
+  }[size];
+
+  if (iconOnly) {
+    return (
+      <div className={`inline-flex items-center shrink-0 select-none group ${className}`}>
+        <img
+          src="/Designer-Insight-Logo-White.png"
+          alt="Designer Insight Icon"
+          className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)]`}
+          loading="eager"
+        />
+      </div>
+    );
+  }
 
   return (
-    <div className={`inline-flex items-center gap-3 select-none group ${className}`}>
-      {/* Official Designer Insight Emblem (from uploaded Designer-Insight-Logo-White-1.png) */}
-      <div className="relative shrink-0 flex items-center justify-center">
-        <svg
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)]"
-          aria-hidden="true"
-        >
-          {/* Outer Arc (Right side) in Brand Orange #f84900 */}
-          <path
-            d="M 50,6 A 44 44 0 0 1 50,94 L 50,82 A 32 32 0 0 0 50,18 Z"
-            fill="#f84900"
-          />
-          {/* Middle Ring (Left half) */}
-          <path
-            d="M 50,25 A 25 25 0 0 0 50,75 L 50,65 A 15 15 0 0 1 50,35 Z"
-            fill="#f84900"
-          />
-          {/* Middle Ring (Right half) */}
-          <path
-            d="M 50,25 A 25 25 0 0 1 50,75 L 50,65 A 15 15 0 0 0 50,35 Z"
-            fill="#f84900"
-          />
-          {/* Center Pupil (Left half solid semicircle) */}
-          <path
-            d="M 50,41 A 9 9 0 0 0 50,59 Z"
-            fill="#f84900"
-          />
-        </svg>
-      </div>
-
-      {/* Wordmark (DESIGNER INSIGHT) matching uploaded logo */}
-      {!iconOnly && (
-        <div className="flex flex-col justify-center leading-none">
-          <div className="flex items-baseline">
-            <span
-              className={`font-extrabold text-[15px] tracking-[0.16em] uppercase font-['Space_Grotesk'] ${textColor} transition-colors group-hover:text-white`}
-            >
-              DESIGNER
-            </span>
-          </div>
-          <div className="flex items-center justify-between mt-1">
-            <span
-              className={`font-bold text-[12px] tracking-[0.32em] uppercase font-['Space_Grotesk'] ${textColor} opacity-90`}
-            >
-              INSIGHT
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f84900] inline-block ml-1 shadow-[0_0_6px_#f84900]" />
-          </div>
-          {showTagline && (
-            <span
-              className={`text-[9px] uppercase tracking-wider mt-0.5 ${taglineColor}`}
-            >
-              Design &amp; Advertising
-            </span>
-          )}
-        </div>
-      )}
+    <div className={`inline-flex items-center select-none group ${className}`}>
+      <img
+        src="/Designer-Insight-Logo-White-1.png"
+        alt="Designer Insight"
+        className={`${heightClasses} w-auto max-w-[240px] sm:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-[1.02] ${
+          variant === 'dark' ? 'invert brightness-0' : ''
+        }`}
+        loading="eager"
+      />
     </div>
   );
 };
+

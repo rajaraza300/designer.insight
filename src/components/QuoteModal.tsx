@@ -53,12 +53,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
         >
           {/* Header */}
           <div className="p-5 sm:p-6 border-b border-neutral-800 flex items-center justify-between bg-neutral-950/80">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-[#f84900]/20 text-[#f84900] flex items-center justify-center">
-                <Sparkles className="w-4 h-4" />
-              </div>
+            <div className="flex items-center gap-3">
+              <img src="/Designer-Insight-Logo-White-1.png" alt="Designer Insight" className="h-8 w-auto object-contain hidden sm:block" />
               <div>
-                <h3 className="text-xl font-bold text-white">Let's Talk With Us</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-white">Let's Talk With Us</h3>
                 <p className="text-xs text-neutral-400">Tell us about your brand vision or upcoming launch.</p>
               </div>
             </div>
