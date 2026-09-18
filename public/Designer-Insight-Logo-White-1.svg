@@ -1,0 +1,28 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 140' width='460' height='140'>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&amp;display=swap');
+      .brand-title {
+        font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+        font-weight: 800;
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <!-- Emblem Center (72, 70) -->
+  <g id='designer-insight-emblem'>
+    <!-- Outer Arc (Right side) -->
+    <path d='M 72,8 A 62 62 0 0 1 72,132 L 72,116 A 46 46 0 0 0 72,24 Z' fill='#f84900' />
+    <!-- Middle Ring (Left half) -->
+    <path d='M 72,34 A 36 36 0 0 0 72,106 L 72,92 A 22 22 0 0 1 72,48 Z' fill='#f84900' />
+    <!-- Middle Ring (Right half) -->
+    <path d='M 72,34 A 36 36 0 0 1 72,106 L 72,92 A 22 22 0 0 0 72,48 Z' fill='#f84900' />
+    <!-- Center Pupil (Left half) -->
+    <path d='M 72,57 A 13 13 0 0 0 72,83 Z' fill='#f84900' />
+  </g>
+  <!-- Wordmark -->
+  <g class='brand-title'>
+    <text x='155' y='64' font-size='42' letter-spacing='3.5'>DESIGNER</text>
+    <text x='157' y='108' font-size='38' letter-spacing='7.5'>INSIGHT</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'>
+  <rect width='120' height='120' rx='28' fill='#070709' />
+  <g transform='translate(-12, -10) scale(1)'>
+    <!-- Outer Arc (Right) -->
+    <path d='M 72,8 A 62 62 0 0 1 72,132 L 72,116 A 46 46 0 0 0 72,24 Z' fill='#f84900' />
+    <!-- Mid Ring (Left) -->
+    <path d='M 72,34 A 36 36 0 0 0 72,106 L 72,92 A 22 22 0 0 1 72,48 Z' fill='#f84900' />
+    <!-- Mid Ring (Right) -->
+    <path d='M 72,34 A 36 36 0 0 1 72,106 L 72,92 A 22 22 0 0 0 72,48 Z' fill='#f84900' />
+    <!-- Pupil (Left) -->
+    <path d='M 72,57 A 13 13 0 0 0 72,83 Z' fill='#f84900' />
+  </g>
+</svg>

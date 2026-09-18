@@ -1,0 +1,6 @@
+{
+  "name": "Designer Insight",
+  "description": "Designer Insight - Premier Design & Advertising Agency specializing in brand identity, web design, presentation pitch decks, and digital marketing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --color-brand-primary: #f84900;
+  --color-brand-accent: #ff6a1a;
+  --color-brand-dark: #08080a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #070709;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background-color: #f84900;
+  color: #ffffff;
+}
+
+/* Custom scrollbar matching brand #f84900 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #242428;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f84900;
+}
+
+/* Subtle glowing backdrop utilities */
+.glow-primary {
+  box-shadow: 0 0 50px -10px rgba(248, 73, 0, 0.35);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+
