@@ -10,6 +10,7 @@ import {
   TestimonialItem,
 } from '../types';
 import { SOCIAL_MEDIA_PROJECTS } from './socialMediaProjects';
+import { PRESENTATION_PROJECTS } from './presentationProjects';
 
 // Official Designer Insight Logo & Favicon Assets
 export const SITE_CONFIG = {
@@ -484,17 +485,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     overview: 'Intuitive micro-interactions and dark-mode data visualization enabling users to budget, track investments, and manage cash flow with zero friction.',
     deliverables: ['Design System & UI Kit', 'Interactive Figma Prototype', 'User Journey Mapping', 'Iconography System'],
   },
-  {
-    id: 'nova-tech-launch',
-    title: 'Bold Launch for Nova Tech Products',
-    category: 'Presentation Design',
-    categoryLabel: '/ Presentation & Pitch Deck',
-    image: '/uploads/Uikit-1.jpg',
-    client: 'Nova Technologies',
-    year: '2025',
-    overview: 'A 45-slide keynote presentation deck engineered for a high-stakes Silicon Valley seed funding round, resulting in $3.2M secured capital.',
-    deliverables: ['Investor Pitch Deck', '3D Device Renders', 'Custom Infographics', 'Presenter Coaching Notes'],
-  },
+  // --- PRESENTATION DESIGN & PITCH DECKS ---
+  ...PRESENTATION_PROJECTS,
   {
     id: 'urbanwear-ecommerce',
     title: 'Minimal E-Commerce for UrbanWear',

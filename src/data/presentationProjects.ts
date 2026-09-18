@@ -1,0 +1,130 @@
+import { PortfolioProject } from '../types';
+
+export const PRESENTATION_PROJECTS: PortfolioProject[] = [
+  {
+    id: '076-biocarburante-pitch',
+    title: 'BioCarburante "Don\'t Wait For Change" Investor Pitch Presentation',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Pitch Deck',
+    image: '/portfolio/076_PPT-(Pitch-deck)-Presentation-design-For-BioCarburante.png',
+    client: 'BioCarburante Tire Company',
+    year: '2025',
+    overview:
+      'High-impact investor keynote presentation board created by Designer Insight for BioCarburante Tire Company ("Don\'t Wait For Change"). Highlighting tire wear environmental footprint, 36,000-ton renewable processing, recovered carbon black (rCB) economics, and bio-fuel circular transition.',
+    deliverables: [
+      'Executive Pitch Deck Layout',
+      'Circular Economy Infographics',
+      'Environmental Impact Data Visualizations',
+      'Recovered Carbon Black (rCB) Keynote Slide',
+      'Bio-fuel Conversion Metric Panels',
+    ],
+  },
+  {
+    id: '077-biocarburante-circular-future',
+    title: 'BioCarburante "Building a Circular Future" Platform Pitch Deck',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Pitch Deck',
+    image: '/portfolio/077_PPT-(Pitch-deck)-Presentation-Design-For-BioCarborante.jpeg',
+    client: 'BioCarburante Company (Mesa, Arizona)',
+    year: '2025',
+    overview:
+      'Strategic institutional pitch presentation slide deck engineered by Designer Insight for BioCarburante\'s $36M+ modular tire-to-resource facility in Mesa, Arizona. Features contracted revenue modeling, 5-plant scaling EBITDA projections ($50M-$65M), and leadership execution structure.',
+    deliverables: [
+      'Institutional Investment Deck',
+      'Multi-Plant Financial EBITDA Roadmap',
+      'Contracted Take-or-Pay Revenue Flowchart',
+      'Arizona & Regional Logistics Infographic',
+      'C-Suite Leadership Hierarchy Board',
+    ],
+  },
+  {
+    id: '078-sollentuna-technical-presentation',
+    title: 'Sollentuna Kommun "Ett År Som Gör Skillnad" Municipal Presentation',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Pitch Deck',
+    image: '/portfolio/078_(Pitch-deck)-Presentation-For-Technical-Department\'s.png',
+    client: 'Sollentuna Kommun (Sweden Technical Department)',
+    year: '2025',
+    overview:
+      'Bespoke Swedish municipal presentation showcase and annual review deck designed by Designer Insight for Sollentuna Kommun ("Ett år som gör skillnad - Tillsammans bygger vi ett bättre Sollentuna"). Highlighting 64,000 sqm asphalt infrastructure, LONA nature conservation, and festive community development.',
+    deliverables: [
+      'Municipal Annual Keynote Deck',
+      'Civic Infrastructure Infographics',
+      'Environmental & LONA Project Showcase',
+      'Traffic Safety & Roadway Stats Board',
+      'Community Holiday Year-in-Review Slide',
+    ],
+  },
+  {
+    id: '079-neon-district-pitch',
+    title: 'Neon District "Own The Streets" Urban Streetwear Brand Pitch Deck',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Pitch Deck',
+    image: '/portfolio/079_PPT-(Pitch-deck)-Presentation-Design-for-Neon-District.jpeg',
+    client: 'Neon District Fashion Brand',
+    year: '2025',
+    overview:
+      'Cyberpunk and neon-infused investor & retail presentation pitch deck designed by Designer Insight for Neon District ("Own the Streets - Urban streetwear redefining individuality and self-expression"). Features dark-mode neon aesthetics, Gen-Z target audience demographics, streetwear market valuation, and visual moodboards.',
+    deliverables: [
+      'Fashion Brand Pitch Deck',
+      'Cyberpunk & Neon Visual Identity Deck',
+      'Audience Demographics & Trend Analysis',
+      'Global Streetwear Market Valuation Slides',
+      'Creative Direction & Night-City Moodboard',
+    ],
+  },
+  {
+    id: '080-al-sayyed-arcade-catalogue',
+    title: 'Al Sayyed Arcade Luxury Real Estate Catalogue & Presentation',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Catalogue Design',
+    image: '/portfolio/080_Catalogue-Design-for-Al-Sayyed-Arcade-Real-Estate.png',
+    client: 'Al Sayyed Builders & Land Developers (SJK Group)',
+    year: '2025',
+    overview:
+      'Opulent black-and-gold real estate presentation catalogue and architectural sales deck designed by Designer Insight for Al Sayyed Arcade (Kohistan Enclave, Wah Cantt). Features metallic gold Arabic calligraphy, architectural floor plan specs, and executive developer profile.',
+    deliverables: [
+      'Executive Real Estate Catalogue',
+      'Gold-Foil Architectural Presentation Book',
+      'Kohistan Enclave Location Mapping',
+      'Floor Plan & Commercial Unit Spec Sheets',
+      'Corporate Developer Profile Deck',
+    ],
+  },
+  {
+    id: '081-sardar-arcade-catalogue',
+    title: 'Sardar Arcade - Sunway Marketing Luxury Penthouse Catalogue',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Catalogue Design',
+    image: '/portfolio/081_Catalogue-Design-for-Sunway-Marketing-Real-Estate.png',
+    client: 'Sardar Developers & Sunway Marketing (MPCHS B-17 Islamabad)',
+    year: '2025',
+    overview:
+      'Premium royal red-and-gold real estate presentation catalogue created by Designer Insight for Sardar Arcade marketed by Sunway Marketing. Showcasing luxury penthouse terrace interior renders, MPCHS B-17 commercial plots, and architectural elevation blueprints.',
+    deliverables: [
+      'Luxury Penthouse Presentation Catalogue',
+      '3D Architectural Exterior Showcase',
+      'Rooftop Terrace & Interior Render Spreads',
+      'MPCHS B-17 Location & Site Map Graphics',
+      'Commercial & Residential Investment Matrix',
+    ],
+  },
+  {
+    id: '082-aaa-square-catalogue',
+    title: 'AAA Square 7-Story Commercial Complex Catalogue & Pitch Deck',
+    category: 'Presentation Design',
+    categoryLabel: '/ Presentation & Catalogue Design',
+    image: '/portfolio/082_Catalogue-Design-for-AAA-Square-Real-Estate-Client.png',
+    client: 'AAA Estate (Pvt) Ltd (Faisal Hills)',
+    year: '2025',
+    overview:
+      'Comprehensive modern 7-story commercial building catalogue and investor presentation designed by Designer Insight for AAA Square at Faisal Hills. Highlighting shopping mall atrium renders, escalators, 3-sided corner building views, and 225ft main boulevard accessibility.',
+    deliverables: [
+      'Commercial Complex Presentation Catalogue',
+      '3D Atrium & Shopping Mall Visualizations',
+      'Faisal Hills Boulevard Site Mapping',
+      'Floor-by-Floor Commercial Unit Specifications',
+      'Investor Return & Amenities Breakdown',
+    ],
+  },
+];

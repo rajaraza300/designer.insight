@@ -31,17 +31,24 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         list.push(`https://designerinsight.online/wp-content/uploads/2025/12/${filename}`);
       }
 
-      // If it's a local /portfolio/ path, also support encoded URI and extension variants
+      // If it's a local /portfolio/ path, also support encoded URI and all extension variants (.png, .jpeg, .jpg, .webp)
       if (initialSrc.startsWith('/portfolio/')) {
         const encoded = encodeURI(initialSrc);
         if (encoded !== initialSrc && !list.includes(encoded)) {
           list.push(encoded);
         }
-        if (initialSrc.endsWith('.webp')) {
-          const jpgVersion = initialSrc.replace(/\.webp$/, '.jpg');
-          const pngVersion = initialSrc.replace(/\.webp$/, '.png');
-          if (!list.includes(jpgVersion)) list.push(jpgVersion);
-          if (!list.includes(pngVersion)) list.push(pngVersion);
+        
+        const baseWithoutExt = initialSrc.replace(/\.(webp|png|jpg|jpeg)$/i, '');
+        const extensions = ['.png', '.webp', '.jpeg', '.jpg'];
+        for (const ext of extensions) {
+          const variant = `${baseWithoutExt}${ext}`;
+          if (!list.includes(variant)) {
+            list.push(variant);
+          }
+          const encodedVariant = encodeURI(variant);
+          if (!list.includes(encodedVariant)) {
+            list.push(encodedVariant);
+          }
         }
       }
     }
