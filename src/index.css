@@ -30,9 +30,9 @@ html.light {
   --bg-primary: #f8f9fa;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --border-subtle: #e4e4e7;
+  --text-primary: #09090b;
+  --text-secondary: #475569;
+  --border-subtle: #e2e8f0;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, .font-heading {
+h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-display);
 }
 
@@ -98,19 +98,21 @@ html.light ::-webkit-scrollbar-thumb:hover {
 }
 
 /* ==========================================================================
-   LIGHT MODE OVERRIDES FOR HIGH ACCESSIBILITY & DELIGHTFUL DAYLIGHT EXPERIENCE
+   LIGHT MODE: HIGH-CONTRAST, ACCESSIBLE, CRISP DAYLIGHT SYSTEM
    ========================================================================== */
 
 html.light {
   color-scheme: light;
 }
 
-html.light body {
-  background-color: #f8f9fa;
-  color: #18181b;
+html.light body,
+html.light #root,
+html.light .min-h-screen {
+  background-color: #f8f9fa !important;
+  color: #09090b !important;
 }
 
-/* Background overrides in light theme */
+/* Background overrides: All dark canvas sections & section gradients become clean off-white */
 html.light .bg-\[\#070709\],
 html.light .bg-\[\#08090E\],
 html.light .bg-\[\#09090c\],
@@ -118,18 +120,33 @@ html.light .bg-\[\#050608\],
 html.light .bg-\[\#050508\],
 html.light .bg-\[\#060608\],
 html.light .bg-\[\#08080a\],
-html.light .bg-\[\#0a0a0d\] {
+html.light .bg-\[\#0a0a0d\],
+html.light [class*="from-[#070709]"],
+html.light [class*="from-[#040406]"],
+html.light [class*="from-[#060608]"],
+html.light [class*="from-[#08090E]"],
+html.light [class*="from-[#09090c]"],
+html.light [class*="from-[#050608]"],
+html.light [class*="from-[#050508]"],
+html.light [class*="from-[#08080a]"] {
+  background-image: none !important;
   background-color: #f8f9fa !important;
 }
 
+/* Cards & Surfaces become solid white with clean subtle shadows */
 html.light .bg-neutral-950,
 html.light .bg-neutral-900,
 html.light .bg-\[\#120d0b\],
 html.light .bg-\[\#0d0d12\],
-html.light .bg-\[\#0f0d12\] {
+html.light .bg-\[\#0f0d12\],
+html.light .bg-\[\#121216\],
+html.light .bg-\[\#0e0d14\],
+html.light .bg-\[\#0a0910\],
+html.light .bg-\[\#0b0a10\] {
   background-color: #ffffff !important;
 }
 
+/* Translucent surfaces */
 html.light .bg-neutral-900\/70,
 html.light .bg-neutral-900\/80,
 html.light .bg-neutral-900\/90,
@@ -140,75 +157,118 @@ html.light .bg-\[\#0f0d12\]\/95,
 html.light .bg-\[\#0a0910\]\/90,
 html.light .bg-\[\#0b0a10\]\/90,
 html.light .bg-\[\#121017\]\/95 {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(12px);
 }
 
+/* Dark gradient CTA Banners convert to elegant luminous light cards with subtle orange aura */
+html.light [class*="from-[#120d0b]"],
+html.light [class*="from-[#0e0d14]"],
+html.light [class*="from-[#0d0909]"],
+html.light [class*="from-[#0c0909]"] {
+  background-image: linear-gradient(135deg, #ffffff 0%, #fffbf8 50%, #fff5ee 100%) !important;
+  background-color: #ffffff !important;
+  border-color: rgba(248, 73, 0, 0.25) !important;
+  box-shadow: 0 20px 40px -15px rgba(248, 73, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Secondary Button Backgrounds (e.g. "Contact Directly", "Schedule Consultation") */
 html.light .bg-neutral-850,
-html.light .bg-neutral-800 {
+html.light .bg-neutral-800,
+html.light .bg-neutral-900:not([class*="bg-gradient-to-r"]) {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-neutral-800:hover,
+html.light .bg-neutral-850:hover,
+html.light .bg-neutral-900:not([class*="bg-gradient-to-r"]):hover {
   background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
 }
 
-html.light .bg-neutral-800\/50 {
-  background-color: rgba(241, 245, 249, 0.7) !important;
-}
+/* --------------------------------------------------------------------------
+   TEXT CONTRAST RULES FOR LIGHT MODE
+   -------------------------------------------------------------------------- */
 
-html.light .bg-black\/60,
-html.light .bg-black\/80 {
-  background-color: rgba(15, 23, 42, 0.65) !important;
-}
-
-/* Headings in light theme */
-html.light h1:not(.keep-white),
-html.light h2:not(.keep-white),
-html.light h3:not(.keep-white),
-html.light h4:not(.keep-white) {
+/* All Headings: Bold, Crisp Dark Charcoal */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
   color: #09090b !important;
 }
 
-/* Text overrides in light theme */
-html.light .text-neutral-100 {
-  color: #18181b !important;
+/* Base Body Text Hierarchy */
+html.light p,
+html.light span:not([class*="text-[#f84900]"]):not([class*="text-transparent"]):not([class*="bg-clip-text"]),
+html.light div {
+  color: inherit;
 }
 
-html.light .text-neutral-200 {
-  color: #27272a !important;
+html.light .text-neutral-100 { color: #09090b !important; }
+html.light .text-neutral-200 { color: #18181b !important; }
+html.light .text-neutral-300 { color: #334155 !important; }
+html.light .text-neutral-400 { color: #475569 !important; }
+html.light .text-neutral-500 { color: #64748b !important; }
+html.light .text-neutral-600 { color: #334155 !important; }
+
+/* In light mode, any element with class .text-white (except inside colored buttons) becomes dark */
+html.light .text-white {
+  color: #09090b !important;
 }
 
-html.light .text-neutral-300 {
-  color: #3f3f46 !important;
+/* Preserve Gradient Headings */
+html.light .text-transparent,
+html.light .bg-clip-text {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
-html.light .text-neutral-400 {
-  color: #52525b !important;
-}
+/* --------------------------------------------------------------------------
+   STRICT PROTECTION: White text inside buttons, badges & colored pills
+   -------------------------------------------------------------------------- */
 
-html.light .text-neutral-500 {
-  color: #71717a !important;
-}
-
-/* Specific text-white adjustments on regular content without breaking buttons */
-html.light div:not(button):not(a):not([class*="bg-gradient-to-r"]):not([class*="bg-[#f84900]"]):not([class*="bg-[#0057ff]"]) > .text-white:not(button *):not(a *) {
-  color: #09090b;
-}
-
-/* Strictly protect white text on buttons, badges, chips & gradient pills */
+/* Gradient CTA Buttons, pills, and interactive primary elements */
 html.light button.bg-gradient-to-r,
-html.light button.bg-gradient-to-r *,
-html.light .bg-gradient-to-r .text-white,
+html.light button.bg-gradient-to-r span,
+html.light button.bg-gradient-to-r svg,
 html.light a.bg-gradient-to-r,
-html.light a.bg-gradient-to-r *,
-html.light .bg-\[\#f84900\] .text-white,
-html.light .bg-\[\#f84900\] *,
-html.light .bg-\[\#0057ff\] .text-white,
-html.light .bg-\[\#0057ff\] *,
+html.light a.bg-gradient-to-r span,
+html.light a.bg-gradient-to-r svg,
+html.light [class*="bg-gradient-to-r"].text-white,
+html.light [class*="bg-gradient-to-r"] .text-white,
 html.light button.bg-\[\#f84900\],
+html.light button.bg-\[\#f84900\] span,
+html.light a.bg-\[\#f84900\],
+html.light a.bg-\[\#f84900\] span,
+html.light .bg-\[\#0057ff\],
+html.light .bg-\[\#0057ff\] span,
+html.light .bg-\[\#0057ff\] svg,
+html.light .bg-emerald-600,
+html.light .bg-emerald-600 span,
+html.light .bg-emerald-500,
+html.light .bg-emerald-500 span,
 html.light .text-white-force,
 html.light .text-white-force * {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
-/* Border overrides in light theme */
+/* Primary Brand Orange Color */
+html.light .text-\[\#f84900\],
+html.light [class*="text-[#f84900]"] {
+  color: #f84900 !important;
+  -webkit-text-fill-color: #f84900 !important;
+}
+
+/* --------------------------------------------------------------------------
+   BORDERS & ELEVATIONS IN LIGHT MODE
+   -------------------------------------------------------------------------- */
+
 html.light .border-neutral-900,
 html.light .border-neutral-800,
 html.light .border-neutral-800\/90,
@@ -218,37 +278,37 @@ html.light .border-neutral-800\/50,
 html.light .border-neutral-700,
 html.light .border-white\/5,
 html.light .border-white\/10 {
-  border-color: #e4e4e7 !important;
+  border-color: #e2e8f0 !important;
 }
 
 html.light .border-b-neutral-900,
 html.light .border-t-neutral-900,
 html.light .border-y-neutral-900 {
-  border-color: #e4e4e7 !important;
+  border-color: #e2e8f0 !important;
 }
 
-/* Cards shadow in light theme */
+/* Card Elevation Shadow */
 html.light .bg-neutral-950,
 html.light .bg-neutral-900,
-html.light .bg-\[\#120d0b\],
-html.light .bg-\[\#0d0d12\],
 html.light .rounded-3xl.bg-neutral-950,
-html.light .rounded-2xl.bg-neutral-900 {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+html.light .rounded-2xl.bg-neutral-900,
+html.light .rounded-3xl.border,
+html.light .rounded-2xl.border {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* Inputs & Form elements in light theme */
+/* Form inputs & textareas */
 html.light input,
 html.light textarea,
 html.light select {
   background-color: #ffffff !important;
-  color: #18181b !important;
-  border-color: #d4d4d8 !important;
+  color: #09090b !important;
+  border-color: #cbd5e1 !important;
 }
 
 html.light input::placeholder,
 html.light textarea::placeholder {
-  color: #a1a1aa !important;
+  color: #94a3b8 !important;
 }
 
 html.light input:focus,
@@ -258,35 +318,21 @@ html.light select:focus {
   outline-color: #f84900 !important;
 }
 
-/* Footer Banner in light theme */
-html.light .bg-gradient-to-r.from-\[\#0d0d12\] {
-  background-image: linear-gradient(to right, #ffffff, #faf5f2, #fff7ed) !important;
-  box-shadow: 0 10px 30px -5px rgba(248, 73, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03) !important;
-}
-
-html.light .bg-gradient-to-r.from-\[\#0d0d12\] h3 {
-  color: #0f172a !important;
-}
-
-html.light .bg-gradient-to-r.from-\[\#0d0d12\] p {
-  color: #475569 !important;
-}
-
-/* Modals in light theme */
+/* Modals & Popovers */
 html.light .fixed .bg-\[\#0a0a0e\],
 html.light .fixed .bg-\[\#0a0a0d\],
 html.light .fixed .bg-\[\#0e0d12\],
 html.light .fixed .bg-\[\#120d0b\],
 html.light .fixed .bg-neutral-950 {
   background-color: #ffffff !important;
-  color: #18181b !important;
-  border-color: #e4e4e7 !important;
+  color: #09090b !important;
+  border-color: #e2e8f0 !important;
 }
 
-/* Marquee in light theme */
+/* Marquee in light mode */
 html.light .bg-\[\#08080a\] {
   background-color: #ffffff !important;
 }
 html.light .bg-\[\#08080a\] span {
-  color: #18181b !important;
+  color: #09090b !important;
 }

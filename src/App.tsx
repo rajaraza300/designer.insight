@@ -14,6 +14,7 @@ import { FaqsView } from './components/FaqsView';
 import { ContactView } from './components/ContactView';
 import { ProjectModal } from './components/ProjectModal';
 import { QuoteModal } from './components/QuoteModal';
+import { ReadingProgressBar } from './components/ReadingProgressBar';
 
 const AppContent: React.FC = () => {
   const [activePage, setActivePage] = useState<PageId>('home');
@@ -37,6 +38,9 @@ const AppContent: React.FC = () => {
         isDark ? 'bg-[#070709] text-neutral-100' : 'bg-[#f8f9fa] text-neutral-900'
       }`}
     >
+      {/* Top Viewport Reading Progress Bar */}
+      <ReadingProgressBar />
+
       {/* Sticky Navigation Bar */}
       <Navbar
         activePage={activePage}

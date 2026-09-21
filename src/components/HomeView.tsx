@@ -745,16 +745,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* 10. BOTTOM CALL TO ACTION */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-[#070709] to-[#040406] relative overflow-hidden">
+      <section className="py-20 sm:py-28 dark:bg-gradient-to-b dark:from-[#070709] dark:to-[#040406] bg-gradient-to-b from-[#f8f9fa] to-white border-t border-neutral-200 dark:border-neutral-900 relative overflow-hidden">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-[#f84900]/15 to-[#ff6a1a]/15 blur-[140px] pointer-events-none rounded-full" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <span className="text-xs font-bold uppercase tracking-widest text-[#f84900] block">
             Let's Collaborate
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-3xl mx-auto leading-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white tracking-tight max-w-3xl mx-auto leading-tight">
             Bring your vision to life with bold creativity.
           </h2>
-          <p className="text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Whether you need a full brand overhaul, an investor-ready pitch deck, or high-performing web and ad creatives, our team is ready.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -771,7 +771,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => onNavigate('contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 font-semibold text-base transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 font-semibold text-base transition-colors cursor-pointer shadow-sm"
             >
               <span>Contact Directly</span>
             </motion.button>

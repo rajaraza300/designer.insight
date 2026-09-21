@@ -51,9 +51,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? isDark
-            ? 'bg-[#070709]/90 backdrop-blur-md border-b border-[#f84900]/20 py-3 shadow-2xl shadow-black/60'
-            : 'bg-white/90 backdrop-blur-md border-b border-neutral-200 py-3 shadow-md shadow-neutral-900/5'
-          : 'bg-transparent py-5 border-b border-transparent'
+            ? 'bg-[#070709]/95 backdrop-blur-md border-b border-[#f84900]/20 py-3 shadow-2xl shadow-black/60'
+            : 'bg-white/95 backdrop-blur-md border-b border-neutral-200 py-3 shadow-md shadow-neutral-900/5'
+          : isDark
+            ? 'bg-[#070709]/75 backdrop-blur-md py-4 border-b border-white/5'
+            : 'bg-white/85 backdrop-blur-md py-4 border-b border-neutral-200/80 shadow-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -79,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
                     ? 'text-[#f84900] font-semibold bg-[#f84900]/10 shadow-[0_0_15px_rgba(248,73,0,0.15)]'
                     : isDark
                     ? 'text-neutral-300 hover:text-white hover:bg-neutral-800/50'
-                    : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
+                    : 'text-neutral-700 hover:text-neutral-950 hover:bg-neutral-100 font-semibold'
                 }`}
               >
                 {item.label}

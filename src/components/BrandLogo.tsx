@@ -13,7 +13,6 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   variant = 'auto',
   className = '',
   iconOnly = false,
-  showTagline = false,
   size = 'md',
 }) => {
   let isDark = true;
@@ -42,28 +41,28 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <div className={`inline-flex items-center shrink-0 select-none group ${className}`}>
         <img
-          src="/Designer-Insight-Logo-White.png"
+          src="/favicon.svg"
           alt="Designer Insight Icon"
-          className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)] ${
-            effectiveVariant === 'dark' ? 'invert brightness-0' : ''
-          }`}
+          className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)]`}
           loading="eager"
         />
       </div>
     );
   }
 
+  const logoSrc =
+    effectiveVariant === 'dark'
+      ? '/Designer-Insight-Logo-Dark-1.svg'
+      : '/Designer-Insight-Logo-White-1.svg';
+
   return (
     <div className={`inline-flex items-center select-none group ${className}`}>
       <img
-        src="/Designer-Insight-Logo-White-1.png"
+        src={logoSrc}
         alt="Designer Insight"
-        className={`${heightClasses} w-auto max-w-[240px] sm:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-[1.02] ${
-          effectiveVariant === 'dark' ? 'invert brightness-0' : ''
-        }`}
+        className={`${heightClasses} w-auto max-w-[240px] sm:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
         loading="eager"
       />
     </div>
   );
 };
-
