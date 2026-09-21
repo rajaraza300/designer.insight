@@ -8,11 +8,39 @@
   --color-brand-dark: #08080a;
 }
 
+:root {
+  --bg-primary: #070709;
+  --bg-surface: #0e0e12;
+  --bg-card: #0d0d12;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a1a1aa;
+  --border-subtle: #27272a;
+}
+
+html.dark {
+  --bg-primary: #070709;
+  --bg-surface: #0e0e12;
+  --bg-card: #0d0d12;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a1a1aa;
+  --border-subtle: #27272a;
+}
+
+html.light {
+  --bg-primary: #f8f9fa;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --border-subtle: #e4e4e7;
+}
+
 body {
   font-family: var(--font-sans);
-  background-color: #070709;
-  color: #f3f4f6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, .font-heading {
@@ -29,13 +57,20 @@ h1, h2, h3, h4, .font-heading {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: #242428;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #f84900;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
   background: #f84900;
 }
 
@@ -62,4 +97,196 @@ h1, h2, h3, h4, .font-heading {
   animation: pulseGlow 4s ease-in-out infinite;
 }
 
+/* ==========================================================================
+   LIGHT MODE OVERRIDES FOR HIGH ACCESSIBILITY & DELIGHTFUL DAYLIGHT EXPERIENCE
+   ========================================================================== */
 
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8f9fa;
+  color: #18181b;
+}
+
+/* Background overrides in light theme */
+html.light .bg-\[\#070709\],
+html.light .bg-\[\#08090E\],
+html.light .bg-\[\#09090c\],
+html.light .bg-\[\#050608\],
+html.light .bg-\[\#050508\],
+html.light .bg-\[\#060608\],
+html.light .bg-\[\#08080a\],
+html.light .bg-\[\#0a0a0d\] {
+  background-color: #f8f9fa !important;
+}
+
+html.light .bg-neutral-950,
+html.light .bg-neutral-900,
+html.light .bg-\[\#120d0b\],
+html.light .bg-\[\#0d0d12\],
+html.light .bg-\[\#0f0d12\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-neutral-900\/70,
+html.light .bg-neutral-900\/80,
+html.light .bg-neutral-900\/90,
+html.light .bg-neutral-950\/80,
+html.light .bg-neutral-950\/90,
+html.light .bg-\[\#0d0d12\]\/95,
+html.light .bg-\[\#0f0d12\]\/95,
+html.light .bg-\[\#0a0910\]\/90,
+html.light .bg-\[\#0b0a10\]\/90,
+html.light .bg-\[\#121017\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+html.light .bg-neutral-850,
+html.light .bg-neutral-800 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-neutral-800\/50 {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+}
+
+html.light .bg-black\/60,
+html.light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+}
+
+/* Headings in light theme */
+html.light h1:not(.keep-white),
+html.light h2:not(.keep-white),
+html.light h3:not(.keep-white),
+html.light h4:not(.keep-white) {
+  color: #09090b !important;
+}
+
+/* Text overrides in light theme */
+html.light .text-neutral-100 {
+  color: #18181b !important;
+}
+
+html.light .text-neutral-200 {
+  color: #27272a !important;
+}
+
+html.light .text-neutral-300 {
+  color: #3f3f46 !important;
+}
+
+html.light .text-neutral-400 {
+  color: #52525b !important;
+}
+
+html.light .text-neutral-500 {
+  color: #71717a !important;
+}
+
+/* Specific text-white adjustments on regular content without breaking buttons */
+html.light div:not(button):not(a):not([class*="bg-gradient-to-r"]):not([class*="bg-[#f84900]"]):not([class*="bg-[#0057ff]"]) > .text-white:not(button *):not(a *) {
+  color: #09090b;
+}
+
+/* Strictly protect white text on buttons, badges, chips & gradient pills */
+html.light button.bg-gradient-to-r,
+html.light button.bg-gradient-to-r *,
+html.light .bg-gradient-to-r .text-white,
+html.light a.bg-gradient-to-r,
+html.light a.bg-gradient-to-r *,
+html.light .bg-\[\#f84900\] .text-white,
+html.light .bg-\[\#f84900\] *,
+html.light .bg-\[\#0057ff\] .text-white,
+html.light .bg-\[\#0057ff\] *,
+html.light button.bg-\[\#f84900\],
+html.light .text-white-force,
+html.light .text-white-force * {
+  color: #ffffff !important;
+}
+
+/* Border overrides in light theme */
+html.light .border-neutral-900,
+html.light .border-neutral-800,
+html.light .border-neutral-800\/90,
+html.light .border-neutral-800\/80,
+html.light .border-neutral-800\/60,
+html.light .border-neutral-800\/50,
+html.light .border-neutral-700,
+html.light .border-white\/5,
+html.light .border-white\/10 {
+  border-color: #e4e4e7 !important;
+}
+
+html.light .border-b-neutral-900,
+html.light .border-t-neutral-900,
+html.light .border-y-neutral-900 {
+  border-color: #e4e4e7 !important;
+}
+
+/* Cards shadow in light theme */
+html.light .bg-neutral-950,
+html.light .bg-neutral-900,
+html.light .bg-\[\#120d0b\],
+html.light .bg-\[\#0d0d12\],
+html.light .rounded-3xl.bg-neutral-950,
+html.light .rounded-2xl.bg-neutral-900 {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* Inputs & Form elements in light theme */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  color: #18181b !important;
+  border-color: #d4d4d8 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #a1a1aa !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus {
+  border-color: #f84900 !important;
+  outline-color: #f84900 !important;
+}
+
+/* Footer Banner in light theme */
+html.light .bg-gradient-to-r.from-\[\#0d0d12\] {
+  background-image: linear-gradient(to right, #ffffff, #faf5f2, #fff7ed) !important;
+  box-shadow: 0 10px 30px -5px rgba(248, 73, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light .bg-gradient-to-r.from-\[\#0d0d12\] h3 {
+  color: #0f172a !important;
+}
+
+html.light .bg-gradient-to-r.from-\[\#0d0d12\] p {
+  color: #475569 !important;
+}
+
+/* Modals in light theme */
+html.light .fixed .bg-\[\#0a0a0e\],
+html.light .fixed .bg-\[\#0a0a0d\],
+html.light .fixed .bg-\[\#0e0d12\],
+html.light .fixed .bg-\[\#120d0b\],
+html.light .fixed .bg-neutral-950 {
+  background-color: #ffffff !important;
+  color: #18181b !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Marquee in light theme */
+html.light .bg-\[\#08080a\] {
+  background-color: #ffffff !important;
+}
+html.light .bg-\[\#08080a\] span {
+  color: #18181b !important;
+}

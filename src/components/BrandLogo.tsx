@@ -1,7 +1,8 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 interface BrandLogoProps {
-  variant?: 'white' | 'dark' | 'color';
+  variant?: 'white' | 'dark' | 'color' | 'auto';
   className?: string;
   iconOnly?: boolean;
   showTagline?: boolean;
@@ -9,12 +10,22 @@ interface BrandLogoProps {
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
-  variant = 'white',
+  variant = 'auto',
   className = '',
   iconOnly = false,
   showTagline = false,
   size = 'md',
 }) => {
+  let isDark = true;
+  try {
+    const themeContext = useTheme();
+    isDark = themeContext.isDark;
+  } catch {
+    isDark = true;
+  }
+
+  const effectiveVariant = variant === 'auto' ? (isDark ? 'white' : 'dark') : variant;
+
   const heightClasses = {
     sm: 'h-8 sm:h-9',
     md: 'h-10 sm:h-11 md:h-12',
@@ -33,7 +44,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <img
           src="/Designer-Insight-Logo-White.png"
           alt="Designer Insight Icon"
-          className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)]`}
+          className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)] ${
+            effectiveVariant === 'dark' ? 'invert brightness-0' : ''
+          }`}
           loading="eager"
         />
       </div>
@@ -46,7 +59,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         src="/Designer-Insight-Logo-White-1.png"
         alt="Designer Insight"
         className={`${heightClasses} w-auto max-w-[240px] sm:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-[1.02] ${
-          variant === 'dark' ? 'invert brightness-0' : ''
+          effectiveVariant === 'dark' ? 'invert brightness-0' : ''
         }`}
         loading="eager"
       />

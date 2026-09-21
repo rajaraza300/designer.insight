@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuote }) => {
           {/* Col 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
             <button onClick={() => handleNav('home')} className="block text-left cursor-pointer group" aria-label="Designer Insight Home">
-              <BrandLogo variant="white" />
+              <BrandLogo variant="auto" />
             </button>
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
               We are a bold creative agency dealing with unique brands, digital experiences, and strategies that make an impact worldwide. Do you need some magic? Let's get started.

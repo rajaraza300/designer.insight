@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageId, PortfolioProject } from './types';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
@@ -14,10 +15,11 @@ import { ContactView } from './components/ContactView';
 import { ProjectModal } from './components/ProjectModal';
 import { QuoteModal } from './components/QuoteModal';
 
-export const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [activePage, setActivePage] = useState<PageId>('home');
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState<boolean>(false);
+  const { isDark } = useTheme();
 
   // Scroll to top when page changes
   const handleNavigate = (page: PageId) => {
@@ -30,7 +32,11 @@ export const App: React.FC = () => {
   }, [activePage]);
 
   return (
-    <div className="min-h-screen bg-[#070709] text-neutral-100 flex flex-col selection:bg-[#f84900] selection:text-white">
+    <div
+      className={`min-h-screen flex flex-col selection:bg-[#f84900] selection:text-white transition-colors duration-300 ${
+        isDark ? 'bg-[#070709] text-neutral-100' : 'bg-[#f8f9fa] text-neutral-900'
+      }`}
+    >
       {/* Sticky Navigation Bar */}
       <Navbar
         activePage={activePage}
@@ -112,6 +118,14 @@ export const App: React.FC = () => {
         onOpenQuote={() => setIsQuoteOpen(true)}
       />
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
