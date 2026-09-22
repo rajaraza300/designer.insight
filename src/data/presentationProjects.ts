@@ -7,6 +7,11 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
     image: '/portfolio/076-biocarburante-pitch.webp',
+    gallery: [
+      '/portfolio/076-biocarburante-pitch.webp',
+      '/portfolio/077-biocarburante-pitch.jpeg',
+      '/portfolio/076_PPT-(Pitch-deck)-Presentation-design-For-BioCarburante.webp',
+    ],
     client: 'BioCarburante Tire Company',
     year: '2025',
     overview:
@@ -25,6 +30,11 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
     image: '/portfolio/077-biocarburante-pitch.jpeg',
+    gallery: [
+      '/portfolio/077-biocarburante-pitch.jpeg',
+      '/portfolio/076-biocarburante-pitch.webp',
+      '/portfolio/077_PPT-(Pitch-deck)-Presentation-Design-For-BioCarborante.jpeg',
+    ],
     client: 'BioCarburante Company (Mesa, Arizona)',
     year: '2025',
     overview:
@@ -43,6 +53,10 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
     image: '/portfolio/078-sollentuna-presentation.webp',
+    gallery: [
+      '/portfolio/078-sollentuna-presentation.webp',
+      "/portfolio/078_(Pitch-deck)-Presentation-For-Technical-Department's.webp",
+    ],
     client: 'Sollentuna Kommun (Sweden Technical Department)',
     year: '2025',
     overview:
@@ -61,6 +75,10 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Pitch Deck',
     image: '/portfolio/079-neon-district-pitch.jpeg',
+    gallery: [
+      '/portfolio/079-neon-district-pitch.jpeg',
+      '/portfolio/079_PPT-(Pitch-deck)-Presentation-Design-for-Neon-District.jpeg',
+    ],
     client: 'Neon District Fashion Brand',
     year: '2025',
     overview:
@@ -79,6 +97,10 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
     image: '/portfolio/080-al-sayyed-arcade.webp',
+    gallery: [
+      '/portfolio/080-al-sayyed-arcade.webp',
+      '/portfolio/080_Catalogue-Design-for-Al-Sayyed-Arcade-Real-Estate.webp',
+    ],
     client: 'Al Sayyed Builders & Land Developers (SJK Group)',
     year: '2025',
     overview:
@@ -97,6 +119,10 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
     image: '/portfolio/081-sunway-marketing.webp',
+    gallery: [
+      '/portfolio/081-sunway-marketing.webp',
+      '/portfolio/081_Catalogue-Design-for-Sunway-Marketing-Real-Estate.webp',
+    ],
     client: 'Sardar Developers & Sunway Marketing (MPCHS B-17 Islamabad)',
     year: '2025',
     overview:
@@ -115,6 +141,10 @@ export const PRESENTATION_PROJECTS: PortfolioProject[] = [
     category: 'Presentation Design',
     categoryLabel: '/ Presentation & Catalogue Design',
     image: '/portfolio/082-aaa-square.webp',
+    gallery: [
+      '/portfolio/082-aaa-square.webp',
+      '/portfolio/082_Catalogue-Design-for-AAA-Square-Real-Estate-Client.webp',
+    ],
     client: 'AAA Estate (Pvt) Ltd (Faisal Hills)',
     year: '2025',
     overview:

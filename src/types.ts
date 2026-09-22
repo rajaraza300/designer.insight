@@ -39,6 +39,8 @@ export interface PortfolioProject {
   category: 'Brand Identity' | 'UI/UX Design' | 'Social Media' | 'Presentation Design' | 'Web Design' | 'Print & Packaging';
   categoryLabel: string;
   image: string;
+  gallery?: string[];
+  images?: string[];
   client?: string;
   year?: string;
   overview?: string;

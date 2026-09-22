@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageId } from '../types';
 import { FAQS_DATA } from '../data/siteData';
 import { Sparkles, HelpCircle, ChevronDown, ChevronUp, Search, MessageSquare, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { applySEO, removeStructuredData } from '../utils/seo';
 
 interface FaqsViewProps {
   onNavigate: (page: PageId) => void;
@@ -16,6 +17,17 @@ export const FaqsView: React.FC<FaqsViewProps> = ({ onNavigate, onOpenQuote }) =
 
   const categories = ['All', 'Payment & Billing', 'Onboarding & Deposit', 'Policies', 'Scope & Revisions', 'Ownership'];
 
+  // Check URL query param on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const categoryParam = params.get('category');
+      if (categoryParam && categories.includes(categoryParam)) {
+        setSelectedCategory(categoryParam);
+      }
+    }
+  }, []);
+
   const filteredFaqs = FAQS_DATA.filter((faq) => {
     const matchesSearch =
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -23,6 +35,84 @@ export const FaqsView: React.FC<FaqsViewProps> = ({ onNavigate, onOpenQuote }) =
     const matchesCat = selectedCategory === 'All' || faq.category === selectedCategory;
     return matchesSearch && matchesCat;
   });
+
+  // Apply JSON-LD FAQPage Schema and SEO metadata
+  useEffect(() => {
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://designerinsight.online';
+    const pageUrl = `${origin}/faqs${selectedCategory !== 'All' ? `?category=${encodeURIComponent(selectedCategory)}` : ''}`;
+
+    const pageTitle = selectedCategory === 'All'
+      ? 'Frequently Asked Questions (FAQ) | Designer Insight Design Agency'
+      : `${selectedCategory} FAQs | Designer Insight`;
+
+    const pageDescription =
+      'Find clear answers to common questions regarding Designer Insight design scopes, payment plans, turnaround times, onboarding, revision policies, and IP ownership.';
+
+    // Google-compliant FAQPage JSON-LD schema
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': pageUrl,
+      name: pageTitle,
+      description: pageDescription,
+      url: pageUrl,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Designer Insight',
+        url: origin,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Designer Insight',
+        url: origin,
+        logo: `${origin}/Designer-Insight-Logo-White-1.png`,
+      },
+      mainEntity: FAQS_DATA.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    };
+
+    applySEO({
+      title: pageTitle,
+      description: pageDescription,
+      canonicalUrl: pageUrl,
+      ogType: 'website',
+      ogImage: '/uploads/abstract-texture-from-mixed-water-and-oil-bubbles-2024-11-18-10-40-26-utc-1.jpg',
+      twitterCard: 'summary_large_image',
+      keywords: [
+        'Designer Insight FAQs',
+        'Agency Questions',
+        'Design Turnaround Times',
+        'Design Payment Terms',
+        'Design Revisions Policy',
+        'Design Copyright Ownership',
+        selectedCategory,
+      ],
+      schemaJson: faqSchema,
+    });
+
+    return () => {
+      removeStructuredData('page-schema-jsonld');
+    };
+  }, [selectedCategory]);
+
+  const handleCategorySelect = (cat: string) => {
+    setSelectedCategory(cat);
+    if (typeof window !== 'undefined' && window.history) {
+      const url = new URL(window.location.href);
+      if (cat === 'All') {
+        url.searchParams.delete('category');
+      } else {
+        url.searchParams.set('category', cat);
+      }
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#070709] text-neutral-100 pt-32 pb-24 overflow-hidden">
@@ -69,7 +159,7 @@ export const FaqsView: React.FC<FaqsViewProps> = ({ onNavigate, onOpenQuote }) =
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => handleCategorySelect(cat)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-gradient-to-r from-[#f84900] to-[#ff6a1a] text-white shadow-md shadow-[#f84900]/20'

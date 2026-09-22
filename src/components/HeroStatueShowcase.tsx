@@ -53,7 +53,13 @@ export const HeroStatueShowcase: React.FC = () => {
           {/* Free-standing Statue without any background shape or outlines */}
           <div className="relative flex items-center justify-center">
             <img
-              src="/statue-transparent.png"
+              src="/envato-labs-ai-806ba6b6-b8d3-4bd8-a3fa-08247ef68240-1.png"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('statue-transparent.png')) {
+                  target.src = '/statue-transparent.png';
+                }
+              }}
               alt="Designer Insight Classical Marble Sculpture"
               className="w-[280px] sm:w-[350px] lg:w-[390px] h-auto max-h-[460px] sm:max-h-[520px] object-contain transition-transform duration-700 group-hover:scale-105 pointer-events-auto filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
               style={{

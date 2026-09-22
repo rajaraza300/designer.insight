@@ -74,6 +74,7 @@ const AppContent: React.FC = () => {
             onNavigate={handleNavigate}
             onOpenProject={(proj) => setSelectedProject(proj)}
             onOpenQuote={() => setIsQuoteOpen(true)}
+            activeProject={selectedProject}
           />
         )}
         {activePage === 'testimonials' && (
@@ -106,7 +107,16 @@ const AppContent: React.FC = () => {
       {/* Global Project Case Study Modal */}
       <ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => {
+          setSelectedProject(null);
+          if (typeof window !== 'undefined' && window.history) {
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('project')) {
+              url.searchParams.delete('project');
+              window.history.replaceState({}, '', url.toString());
+            }
+          }
+        }}
         onOpenQuote={() => setIsQuoteOpen(true)}
       />
 

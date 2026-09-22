@@ -305,7 +305,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onOpenQuote })
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <div className="flex items-center gap-2">
                     <a
-                      href={SITE_CONFIG.socials.linkedin}
+                      href={member.socials?.linkedin || SITE_CONFIG.socials.linkedin}
                       target="_blank"
                       rel="noreferrer"
                       className="w-8 h-8 rounded-full bg-[#f84900] text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -314,7 +314,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onOpenQuote })
                       <Linkedin className="w-4 h-4" />
                     </a>
                     <a
-                      href={SITE_CONFIG.socials.instagram}
+                      href={member.socials?.instagram || SITE_CONFIG.socials.instagram}
                       target="_blank"
                       rel="noreferrer"
                       className="w-8 h-8 rounded-full bg-[#ff7a38] text-white flex items-center justify-center hover:scale-110 transition-transform"

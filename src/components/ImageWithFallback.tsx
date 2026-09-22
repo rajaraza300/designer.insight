@@ -25,10 +25,25 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     if (initialSrc) {
       list.push(initialSrc);
       
-      // If it's a local /uploads/ path, also queue the live domain path as backup
-      if (initialSrc.startsWith('/uploads/')) {
-        const filename = initialSrc.replace('/uploads/', '');
-        list.push(`https://designerinsight.online/wp-content/uploads/2025/12/${filename}`);
+      // If it's a local /uploads/ or /team/ path, queue local variants and live domain paths as backup
+      if (initialSrc.startsWith('/uploads/') || initialSrc.startsWith('/team/') || initialSrc.startsWith('/')) {
+        const filename = initialSrc.split('/').pop() || '';
+        if (filename) {
+          const localVariants = [`/uploads/${filename}`, `/team/${filename}`, `/${filename}`];
+          localVariants.forEach((v) => {
+            if (!list.includes(v)) list.push(v);
+          });
+          
+          const remoteVariants = [
+            `https://designerinsight.online/wp-content/uploads/2025/12/${filename}`,
+            `https://designerinsight.online/wp-content/uploads/2025/01/${filename}`,
+            `https://designerinsight.online/wp-content/uploads/2024/12/${filename}`,
+            `https://designerinsight.online/wp-content/uploads/${filename}`,
+          ];
+          remoteVariants.forEach((v) => {
+            if (!list.includes(v)) list.push(v);
+          });
+        }
       }
 
       // If it's a local /portfolio/ path, also support encoded URI and all extension variants (.png, .jpeg, .jpg, .webp)
