@@ -15,18 +15,36 @@ import { ContactView } from './components/ContactView';
 import { ProjectModal } from './components/ProjectModal';
 import { QuoteModal } from './components/QuoteModal';
 import { ReadingProgressBar } from './components/ReadingProgressBar';
+import { getPageFromPathname, getPagePath } from './utils/routes';
 
 const AppContent: React.FC = () => {
-  const [activePage, setActivePage] = useState<PageId>('home');
+  const [activePage, setActivePage] = useState<PageId>(() =>
+    typeof window === 'undefined' ? 'home' : getPageFromPathname(window.location.pathname),
+  );
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState<boolean>(false);
   const { isDark } = useTheme();
 
   // Scroll to top when page changes
   const handleNavigate = (page: PageId) => {
+    const nextPath = getPagePath(page);
+    if (window.location.pathname !== nextPath || window.location.search) {
+      window.history.pushState({ page }, '', nextPath);
+    }
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Keep the rendered page in sync with browser Back/Forward navigation.
+  useEffect(() => {
+    const handlePopState = () => {
+      setSelectedProject(null);
+      setActivePage(getPageFromPathname(window.location.pathname));
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

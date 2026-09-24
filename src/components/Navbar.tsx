@@ -5,6 +5,7 @@ import { Menu, X, ArrowUpRight, Sparkles, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrandLogo } from './BrandLogo';
 import { useTheme } from '../context/ThemeContext';
+import { getPagePath } from '../utils/routes';
 
 interface NavbarProps {
   activePage: PageId;
@@ -60,22 +61,30 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <button
-          onClick={() => handleItemClick('home')}
+        <a
+          href={getPagePath('home')}
+          onClick={(event) => {
+            event.preventDefault();
+            handleItemClick('home');
+          }}
           className="flex items-center gap-3 group text-left focus:outline-none cursor-pointer"
           aria-label="Designer Insight Home"
         >
           <BrandLogo variant="auto" />
-        </button>
+        </a>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           {navItems.map((item) => {
             const isActive = activePage === item.id;
             return (
-              <button
+              <a
                 key={item.id}
-                onClick={() => handleItemClick(item.id)}
+                href={getPagePath(item.id)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleItemClick(item.id);
+                }}
                 className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 relative ${
                   isActive
                     ? 'text-[#f84900] font-semibold bg-[#f84900]/10 shadow-[0_0_15px_rgba(248,73,0,0.15)]'
@@ -92,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
-              </button>
+              </a>
             );
           })}
         </nav>
@@ -229,9 +238,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
               {navItems.map((item) => {
                 const isActive = activePage === item.id;
                 return (
-                  <button
+                  <a
                     key={item.id}
-                    onClick={() => handleItemClick(item.id)}
+                    href={getPagePath(item.id)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handleItemClick(item.id);
+                    }}
                     className={`text-left px-4 py-2.5 rounded-lg text-base font-medium transition-colors cursor-pointer ${
                       isActive
                         ? 'bg-[#f84900]/10 text-[#f84900] font-semibold border-l-2 border-[#f84900]'
@@ -241,7 +254,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
                     }`}
                   >
                     {item.label}
-                  </button>
+                  </a>
                 );
               })}
               <div className="pt-3 mt-2 border-t border-neutral-800/80">
@@ -264,4 +277,3 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate, onOpenQu
     </motion.header>
   );
 };
-
