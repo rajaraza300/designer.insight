@@ -6,7 +6,6 @@ import {
   PORTFOLIO_PROJECTS,
   AWARDS_DATA,
   PROCESS_STEPS,
-  CLIENT_LOGOS,
   BLOG_POSTS,
 } from '../data/siteData';
 import { MarqueeTicker } from './MarqueeTicker';
@@ -84,7 +83,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
     'UI/UX Design',
     'Web Design',
     'Presentation Design',
-  ];
+  ].filter(
+    (category) =>
+      category === 'All' ||
+      PORTFOLIO_PROJECTS.some((project) => project.category === category),
+  );
 
   return (
     <div className="min-h-screen bg-[#070709] text-neutral-100 overflow-hidden">
@@ -548,33 +551,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 6. CLIENT LOGOS */}
-      <section className="py-16 bg-[#060608] border-b border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-8">
-            Trusted by Ambitious Brands &amp; Global Innovators
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {CLIENT_LOGOS.map((client, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="h-16 flex items-center justify-center p-3 rounded-2xl bg-neutral-900/40 border border-neutral-800/60 hover:border-[#f84900]/40 transition-all filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100"
-              >
-                <img
-                  src={client.image}
-                  alt={client.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-10 max-w-[110px] object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. ACHIEVEMENTS & ACCOLADES */}
+      {/* 6. ACHIEVEMENTS & ACCOLADES */}
       <section className="py-20 sm:py-28 bg-[#070709] border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

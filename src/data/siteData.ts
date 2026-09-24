@@ -57,33 +57,6 @@ export const MARQUEE_ITEMS = [
   'Brand Identity',
 ];
 
-export const CLIENT_LOGOS = [
-  {
-    name: 'Apex Labs',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none"><path d="M12 28L22 10L32 28H12Z" stroke="%23f84900" stroke-width="2.5"/><text x="42" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="14" letter-spacing="1.5">APEX LABS</text></svg>`,
-  },
-  {
-    name: 'Nova Global',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none"><circle cx="20" cy="20" r="9" stroke="%23f84900" stroke-width="2.5"/><circle cx="20" cy="20" r="3" fill="white"/><text x="38" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="14" letter-spacing="1.5">NOVA TECH</text></svg>`,
-  },
-  {
-    name: 'Vanguard Group',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="none"><path d="M12 12L21 28L30 12" stroke="%23f84900" stroke-width="2.5" stroke-linecap="round"/><text x="38" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5">VANGUARD</text></svg>`,
-  },
-  {
-    name: 'Lumina Creative',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none"><rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)" stroke="%23f84900" stroke-width="2.2"/><text x="38" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="14" letter-spacing="1.5">LUMINA</text></svg>`,
-  },
-  {
-    name: 'Kinesis Motion',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none"><path d="M11 20H29M20 11V29" stroke="%23f84900" stroke-width="2.5" stroke-linecap="round"/><text x="38" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="13.5" letter-spacing="1.5">KINESIS</text></svg>`,
-  },
-  {
-    name: 'Sphere Dynamics',
-    image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="none"><circle cx="20" cy="20" r="10" stroke="%23f84900" stroke-width="2"/><path d="M14 20C14 16 26 16 26 20C26 24 14 24 14 20Z" stroke="white" stroke-width="1.5"/><text x="38" y="25" fill="%23d4d4d8" font-family="system-ui,sans-serif" font-weight="800" font-size="13.5" letter-spacing="1.5">SPHERE</text></svg>`,
-  },
-];
-
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'brand-identity',
@@ -412,44 +385,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       'Digital Social Share Graphics',
     ],
   },
-  // --- PRINT & PACKAGING: STANDEE & TRANSACTIONAL STATIONERY ---
-  {
-    id: 'modern-standee-banner-design',
-    title: 'Modern Standee Roll-Up Banner Design',
-    category: 'Print & Packaging',
-    categoryLabel: '/ Roll-Up Standee & Signage',
-    image: '/portfolio/f1-amore-homes-panaflex-design.jpeg',
-    client: 'Corporate Summit & Retail Exhibitions',
-    year: '2025',
-    overview: 'High-impact roll-up standee banner created by Designer Insight for corporate events, retail displays, and summits. Engineered with eye-catching visual hierarchy, vivid typography, and high-resolution print precision.',
-    deliverables: [
-      'Retractable Roll-Up Banner (33x81 in)',
-      'Event Exhibition Signage',
-      'Vector Print-Ready Artwork',
-      'Color-Calibrated CMYK Layout',
-      'Promotional Display Guides',
-    ],
-  },
-  {
-    id: 'modern-receipt-invoice-design',
-    title: 'Modern Receipt & Corporate Invoice Design',
-    category: 'Print & Packaging',
-    categoryLabel: '/ Transactional Stationery & Receipts',
-    image: '/portfolio/health-care-stationery-collateral.png',
-    client: 'Enterprise Commerce & Billing Systems',
-    year: '2025',
-    overview: 'Contemporary corporate receipt and transactional invoice design by Designer Insight. Designed for seamless clarity, official recordkeeping, digital POS compatibility, and clean corporate identity integration.',
-    deliverables: [
-      'Modern Receipt & Invoice Templates',
-      'Duplicate Billing Memo Formats',
-      'Vector Tabular Accounting Sheets',
-      'Thermal & A4 Print Specifications',
-      'Branded Digital PDF Layouts',
-    ],
-  },
-  // --- SOCIAL MEDIA & MARKETING CAMPAIGNS (User Specified Exact 30 Projects) ---
+  // --- SOCIAL MEDIA & MARKETING CAMPAIGNS (VERIFIED PORTFOLIO WORK) ---
   ...SOCIAL_MEDIA_PROJECTS,
-  // --- ADDITIONAL AGENCY WORKS ---
+  // --- ADDITIONAL VERIFIED AGENCY WORK ---
   {
     id: 'empiric-brand-identity',
     title: 'Empiric Brand Identity',
@@ -461,52 +399,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     overview: 'Clean, authoritative visual positioning for a scientific venture capital fund, blending precision gridlines with elegant modern typography.',
     deliverables: ['Corporate Identity', 'Pitch Deck Template', 'Executive Stationery', 'Website Concept'],
   },
-  {
-    id: 'amiras-furniture',
-    title: "Amira's Furniture Care Brand Identity",
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity',
-    image: '/uploads/Amiras-Furniture-Care-Brand-Identity-scaled.png',
-    client: "Amira's Furniture",
-    year: '2025',
-    overview: 'Crafted an artisanal, premium visual identity for high-end luxury furniture restoration and bespoke interior preservation.',
-    deliverables: ['Custom Monogram Logo', 'Packaging Seals', 'Catalogue Layouts', 'Stationery Suite'],
-  },
-  {
-    id: 'rok-website',
-    title: 'ROK Website Design & Development',
-    category: 'Web Design',
-    categoryLabel: '/ Web Design & UI',
-    image: '/uploads/ROK-Website-Design-scaled.png',
-    client: 'ROK Modern Living',
-    year: '2025',
-    overview: 'A sleek, minimalist e-commerce digital flagship built on WordPress & WooCommerce with instant product customizer and swift checkout flow.',
-    deliverables: ['UX Wireframes', 'Responsive Web App', 'Interactive Cart', 'Performance Optimization'],
-  },
-  {
-    id: 'finance-tracker-app',
-    title: 'Mobile App for Daily Finance Tracker',
-    category: 'UI/UX Design',
-    categoryLabel: '/ UI/UX Design',
-    image: '/uploads/Phone-Mockup_2-1.jpg',
-    client: 'FinFlow Inc.',
-    year: '2025',
-    overview: 'Intuitive micro-interactions and dark-mode data visualization enabling users to budget, track investments, and manage cash flow with zero friction.',
-    deliverables: ['Design System & UI Kit', 'Interactive Figma Prototype', 'User Journey Mapping', 'Iconography System'],
-  },
   // --- PRESENTATION DESIGN & PITCH DECKS ---
   ...PRESENTATION_PROJECTS,
-  {
-    id: 'urbanwear-ecommerce',
-    title: 'Minimal E-Commerce for UrbanWear',
-    category: 'Web Design',
-    categoryLabel: '/ Web & E-Commerce',
-    image: '/uploads/Laptop-1.jpg',
-    client: 'UrbanWear Apparel',
-    year: '2025',
-    overview: 'High-speed headless Shopify storefront built with fluid filter animations, quick-add bag functionality, and dynamic lookbook editorial integration.',
-    deliverables: ['Custom Shopify Store', 'Lookbook Interactive CMS', 'Global Currency Switcher', 'Cart Optimization'],
-  },
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
@@ -993,4 +887,3 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     verified: true,
   },
 ];
-

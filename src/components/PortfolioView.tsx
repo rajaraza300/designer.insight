@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageId, PortfolioProject } from '../types';
-import { PORTFOLIO_PROJECTS, CLIENT_LOGOS } from '../data/siteData';
+import { PORTFOLIO_PROJECTS } from '../data/siteData';
 import { ArrowUpRight, Sparkles, Eye, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './ImageWithFallback';
@@ -174,7 +174,9 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
         >
           {/* Scrollable pill filter bar */}
           <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-2 scrollbar-none no-scrollbar py-1">
-            {CATEGORY_TABS.map((tab) => {
+            {CATEGORY_TABS.filter(
+              (tab) => tab.id === 'All' || getCount(tab) > 0,
+            ).map((tab) => {
               const isActive = selectedCategory === tab.id;
               const count = getCount(tab);
               return (
@@ -295,32 +297,6 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
             </motion.div>
           ))}
         </motion.div>
-      </section>
-
-      {/* Client Logos Grid */}
-      <section className="bg-[#050508] py-16 border-y border-neutral-900 mb-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-8">
-            Trusted by Brands Around the World
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {CLIENT_LOGOS.map((client, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="h-16 flex items-center justify-center p-3 rounded-2xl bg-neutral-900/40 border border-neutral-800/60 hover:border-[#f84900]/40 transition-colors"
-              >
-                <img
-                  src={client.image}
-                  alt={client.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-10 max-w-[110px] object-contain filter grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* CTA Box */}
