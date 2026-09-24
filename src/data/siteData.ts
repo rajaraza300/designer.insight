@@ -408,7 +408,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'raja-raza',
     name: 'Raja Raza',
     role: 'Co-Founder & Creative Lead',
-    image: '/uploads/Raja-Raza.png',
+    image: '/uploads/Raja-Raza.webp',
     isLeadership: true,
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
@@ -419,7 +419,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'aqsa-kamran',
     name: 'Aqsa Kamran',
     role: 'Graphic Designer',
-    image: '/uploads/Aqsa-Kamran-scaled.png',
+    image: '/uploads/Aqsa-Kamran-scaled.webp',
     isLeadership: true,
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
@@ -430,7 +430,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'sajjal-mughal',
     name: 'Sajjal Mughal',
     role: 'Business Development Manager',
-    image: '/uploads/Sajjal-Mughal-scaled.png',
+    image: '/uploads/Sajjal-Mughal-scaled.webp',
     isLeadership: true,
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
@@ -441,7 +441,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'qaiser-raiz-khan',
     name: 'Qaiser Raiz Khan',
     role: 'UX/UI Graphic Designer',
-    image: '/uploads/Qaiser-Raiz-Khan-scaled.png',
+    image: '/uploads/Qaiser-Raiz-Khan-scaled.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -451,7 +451,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'hamza-bin-zia',
     name: 'Hamza Bin Zia',
     role: 'Website Designer / Developer',
-    image: '/uploads/Hamza-Graphic-Designer.jpg',
+    image: '/uploads/Hamza-Graphic-Designer.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -461,7 +461,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'abdul-rehman',
     name: 'Abdul Rehman',
     role: 'Business Development Manager',
-    image: '/uploads/Abdul-Rehman-scaled.png',
+    image: '/uploads/Abdul-Rehman-scaled.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -471,7 +471,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'naseem-mai',
     name: 'Naseem Mai',
     role: 'Graphic Designer',
-    image: '/uploads/Naseem-Mai-2-scaled.png',
+    image: '/uploads/Naseem-Mai-2-scaled.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -481,7 +481,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'noor-mughal',
     name: 'Noor Mughal',
     role: 'Performance & Ecommerce Marketer',
-    image: '/uploads/Noor-Mughal-scaled.png',
+    image: '/uploads/Noor-Mughal-scaled.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -491,7 +491,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'shehzad-manzoor',
     name: 'Shehzad Manzoor',
     role: 'Logo Designer / Graphic Designer',
-    image: '/uploads/Shehzad-Manzoor-Graphic-Designer.jpg',
+    image: '/uploads/Shehzad-Manzoor-Graphic-Designer.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
@@ -501,7 +501,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'eiza-batool',
     name: 'Eiza Batool',
     role: 'Graphic Designer',
-    image: '/uploads/Untitled-design.png',
+    image: '/uploads/Untitled-design.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
