@@ -300,6 +300,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onOpenQuote })
                   src={member.image}
                   alt={member.name}
                   fallbackTitle={member.name}
+                  width={600}
+                  height={800}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">

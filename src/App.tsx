@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { PageId, PortfolioProject } from './types';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
-import { AboutView } from './components/AboutView';
-import { ServicesView } from './components/ServicesView';
-import { PortfolioView } from './components/PortfolioView';
-import { PricingView } from './components/PricingView';
-import { BlogsView } from './components/BlogsView';
-import { ContactView } from './components/ContactView';
-import { ProjectModal } from './components/ProjectModal';
-import { QuoteModal } from './components/QuoteModal';
 import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { getPageFromPathname, getPagePath } from './utils/routes';
+
+const AboutView = lazy(() => import('./components/AboutView').then((module) => ({ default: module.AboutView })));
+const ServicesView = lazy(() => import('./components/ServicesView').then((module) => ({ default: module.ServicesView })));
+const PortfolioView = lazy(() => import('./components/PortfolioView').then((module) => ({ default: module.PortfolioView })));
+const PricingView = lazy(() => import('./components/PricingView').then((module) => ({ default: module.PricingView })));
+const BlogsView = lazy(() => import('./components/BlogsView').then((module) => ({ default: module.BlogsView })));
+const ContactView = lazy(() => import('./components/ContactView').then((module) => ({ default: module.ContactView })));
+const ProjectModal = lazy(() => import('./components/ProjectModal').then((module) => ({ default: module.ProjectModal })));
+const QuoteModal = lazy(() => import('./components/QuoteModal').then((module) => ({ default: module.QuoteModal })));
 
 const AppContent: React.FC = () => {
   const [activePage, setActivePage] = useState<PageId>(() =>
@@ -76,6 +77,7 @@ const AppContent: React.FC = () => {
 
       {/* Main View Router */}
       <main className="flex-1">
+        <Suspense fallback={<div className="min-h-[60vh] bg-[#070709]" aria-hidden="true" />}>
         {activePage === 'home' && (
           <HomeView
             onNavigate={handleNavigate}
@@ -116,29 +118,38 @@ const AppContent: React.FC = () => {
           />
         )}
         {activePage === 'contact' && <ContactView />}
+        </Suspense>
       </main>
 
       {/* Global Project Case Study Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => {
-          setSelectedProject(null);
-          if (typeof window !== 'undefined' && window.history) {
-            const url = new URL(window.location.href);
-            if (url.searchParams.has('project')) {
-              url.searchParams.delete('project');
-              window.history.replaceState({}, '', url.toString());
-            }
-          }
-        }}
-        onOpenQuote={() => setIsQuoteOpen(true)}
-      />
+      {selectedProject && (
+        <Suspense fallback={null}>
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => {
+              setSelectedProject(null);
+              if (typeof window !== 'undefined' && window.history) {
+                const url = new URL(window.location.href);
+                if (url.searchParams.has('project')) {
+                  url.searchParams.delete('project');
+                  window.history.replaceState({}, '', url.toString());
+                }
+              }
+            }}
+            onOpenQuote={() => setIsQuoteOpen(true)}
+          />
+        </Suspense>
+      )}
 
       {/* Global Consultation / "Let's Talk" Modal */}
-      <QuoteModal
-        isOpen={isQuoteOpen}
-        onClose={() => setIsQuoteOpen(false)}
-      />
+      {isQuoteOpen && (
+        <Suspense fallback={null}>
+          <QuoteModal
+            isOpen
+            onClose={() => setIsQuoteOpen(false)}
+          />
+        </Suspense>
+      )}
 
       {/* Global Site Footer */}
       <Footer

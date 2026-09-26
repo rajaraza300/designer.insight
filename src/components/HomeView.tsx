@@ -74,7 +74,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const filteredProjects =
     portfolioFilter === 'All'
       ? allMixedProjects
-      : PORTFOLIO_PROJECTS.filter((p) => p.category === portfolioFilter);
+      : PORTFOLIO_PROJECTS.filter((p) => p.category === portfolioFilter).slice(0, 9);
 
   const categories = [
     'All',
@@ -439,7 +439,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* 5. OUR PORTFOLIO */}
-      <section className="py-20 sm:py-28 bg-[#08090E] border-b border-neutral-900">
+      <section className="py-20 sm:py-28 bg-[#08090E] border-b border-neutral-900 [content-visibility:auto] [contain-intrinsic-size:1200px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -508,6 +508,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     src={project.image}
                     alt={project.title}
                     fallbackTitle={project.title}
+                    width={1200}
+                    height={900}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 will-change-transform"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 p-4">
@@ -660,10 +663,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* 9. CLIENT TESTIMONIALS */}
-      <HomeTestimonialsSection />
+      <div className="[content-visibility:auto] [contain-intrinsic-size:700px]">
+        <HomeTestimonialsSection />
+      </div>
 
       {/* 10. FREQUENTLY ASKED QUESTIONS */}
-      <HomeFaqsSection />
+      <div className="[content-visibility:auto] [contain-intrinsic-size:700px]">
+        <HomeFaqsSection />
+      </div>
 
       {/* 11. BLOG INSIGHTS PREVIEW */}
       <section className="py-20 sm:py-28 bg-[#070709] border-b border-neutral-900">

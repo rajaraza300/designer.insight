@@ -91,9 +91,9 @@ export const SOCIAL_MEDIA_PROJECTS: PortfolioProject[] = [
     title: "Social Media Post Design for Amira's Furniture",
     category: 'Social Media',
     categoryLabel: '/ Social Media Post Design',
-    image: "/portfolio/026_Social-Media-Post-Design-for-Amira's-Furniture.webp",
+    image: '/portfolio/amiras-furniture-social.webp',
     gallery: [
-      "/portfolio/026_Social-Media-Post-Design-for-Amira's-Furniture.webp",
+      '/portfolio/amiras-furniture-social.webp',
       "/portfolio/026_Social-Media-Post-Design-for-Amira's-Furniture-1.webp",
       '/portfolio/amiras-furniture-social.jpg',
     ],
@@ -113,9 +113,9 @@ export const SOCIAL_MEDIA_PROJECTS: PortfolioProject[] = [
     title: 'Social Media Post Design for ROK Commerce Shopify Store',
     category: 'Social Media',
     categoryLabel: '/ E-Commerce Social Posts',
-    image: '/portfolio/027_Social-Media-Post-Design-for-ROK-Commerce-Shopify-Store.webp',
+    image: '/portfolio/rok-commerce-social.webp',
     gallery: [
-      '/portfolio/027_Social-Media-Post-Design-for-ROK-Commerce-Shopify-Store.webp',
+      '/portfolio/rok-commerce-social.webp',
       '/portfolio/027_Social-Media-Post-Design-for-ROK-Commerce-Shopify-Store-1.webp',
       '/portfolio/rok-commerce-marketing.jpg',
       '/portfolio/rok-commerce-social-posts.png',
