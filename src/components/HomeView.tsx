@@ -27,6 +27,7 @@ import {
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './ImageWithFallback';
 import { HeroStatueShowcase } from './HeroStatueShowcase';
+import { HomeFaqsSection, HomeTestimonialsSection } from './HomeTrustSections';
 
 interface HomeViewProps {
   onNavigate: (page: PageId) => void;
@@ -658,7 +659,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 9. BLOG INSIGHTS PREVIEW */}
+      {/* 9. CLIENT TESTIMONIALS */}
+      <HomeTestimonialsSection />
+
+      {/* 10. FREQUENTLY ASKED QUESTIONS */}
+      <HomeFaqsSection />
+
+      {/* 11. BLOG INSIGHTS PREVIEW */}
       <section className="py-20 sm:py-28 bg-[#070709] border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -721,7 +728,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 10. BOTTOM CALL TO ACTION */}
+      {/* 12. BOTTOM CALL TO ACTION */}
       <section className="py-20 sm:py-28 dark:bg-gradient-to-b dark:from-[#070709] dark:to-[#040406] bg-gradient-to-b from-[#f8f9fa] to-white border-t border-neutral-200 dark:border-neutral-900 relative overflow-hidden">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-[#f84900]/15 to-[#ff6a1a]/15 blur-[140px] pointer-events-none rounded-full" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">

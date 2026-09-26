@@ -5,10 +5,10 @@ export const PAGE_PATHS: Record<PageId, string> = {
   about: '/about',
   services: '/services',
   portfolio: '/portfolio',
-  testimonials: '/testimonials',
+  testimonials: '/#testimonials',
   pricing: '/pricing',
   blogs: '/blogs',
-  faqs: '/faqs',
+  faqs: '/#faqs',
   contact: '/contact',
 };
 
@@ -26,5 +26,6 @@ export function getPagePath(page: PageId): string {
 
 export function getPageFromPathname(pathname: string): PageId {
   const normalizedPath = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  if (normalizedPath === '/testimonials' || normalizedPath === '/faqs') return 'home';
   return PATH_PAGES[normalizedPath] ?? 'home';
 }

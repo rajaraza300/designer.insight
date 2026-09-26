@@ -7,10 +7,8 @@ import { HomeView } from './components/HomeView';
 import { AboutView } from './components/AboutView';
 import { ServicesView } from './components/ServicesView';
 import { PortfolioView } from './components/PortfolioView';
-import { TestimonialsView } from './components/TestimonialsView';
 import { PricingView } from './components/PricingView';
 import { BlogsView } from './components/BlogsView';
-import { FaqsView } from './components/FaqsView';
 import { ContactView } from './components/ContactView';
 import { ProjectModal } from './components/ProjectModal';
 import { QuoteModal } from './components/QuoteModal';
@@ -27,6 +25,16 @@ const AppContent: React.FC = () => {
 
   // Scroll to top when page changes
   const handleNavigate = (page: PageId) => {
+    if (page === 'testimonials' || page === 'faqs') {
+      const sectionId = page;
+      window.history.pushState({ page: 'home', sectionId }, '', `/#${sectionId}`);
+      setActivePage('home');
+      window.setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+      return;
+    }
+
     const nextPath = getPagePath(page);
     if (window.location.pathname !== nextPath || window.location.search) {
       window.history.pushState({ page }, '', nextPath);
@@ -95,12 +103,6 @@ const AppContent: React.FC = () => {
             activeProject={selectedProject}
           />
         )}
-        {activePage === 'testimonials' && (
-          <TestimonialsView
-            onNavigate={handleNavigate}
-            onOpenQuote={() => setIsQuoteOpen(true)}
-          />
-        )}
         {activePage === 'pricing' && (
           <PricingView
             onNavigate={handleNavigate}
@@ -109,12 +111,6 @@ const AppContent: React.FC = () => {
         )}
         {activePage === 'blogs' && (
           <BlogsView
-            onNavigate={handleNavigate}
-            onOpenQuote={() => setIsQuoteOpen(true)}
-          />
-        )}
-        {activePage === 'faqs' && (
-          <FaqsView
             onNavigate={handleNavigate}
             onOpenQuote={() => setIsQuoteOpen(true)}
           />
