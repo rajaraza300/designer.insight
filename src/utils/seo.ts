@@ -12,6 +12,7 @@ export interface SEOConfig {
   twitterCard?: 'summary' | 'summary_large_image';
   keywords?: string[];
   schemaJson?: object | object[];
+  robots?: string;
 }
 
 export function setMetaTag(key: string, content: string, isProperty = false) {
@@ -78,6 +79,8 @@ export function applySEO(config: SEOConfig) {
 
   // Standard Meta Tags
   setMetaTag('description', config.description);
+  setMetaTag('robots', config.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  setMetaTag('author', 'Designer Insight');
   if (config.keywords && config.keywords.length > 0) {
     setMetaTag('keywords', config.keywords.join(', '));
   }
@@ -93,10 +96,12 @@ export function applySEO(config: SEOConfig) {
   setMetaTag('og:url', canonical, true);
   setMetaTag('og:type', config.ogType || 'website', true);
   setMetaTag('og:site_name', 'Designer Insight', true);
+  setMetaTag('og:locale', 'en_US', true);
   if (config.ogImage) {
     const fullImg = config.ogImage.startsWith('http') ? config.ogImage : `${origin}${config.ogImage}`;
     setMetaTag('og:image', fullImg, true);
     setMetaTag('og:image:alt', config.title, true);
+    setMetaTag('og:image:type', 'image/jpeg', true);
   }
 
   // Twitter / X
