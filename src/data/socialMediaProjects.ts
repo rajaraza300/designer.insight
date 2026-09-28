@@ -136,11 +136,9 @@ export const SOCIAL_MEDIA_PROJECTS: PortfolioProject[] = [
     title: 'Social Media Post Design for Wizspeed Website Design',
     category: 'Social Media',
     categoryLabel: '/ Tech Agency Social Media',
-    image: '/portfolio/028_Social-Media-Post-Design-for-Wizspeed-Website-Design.webp',
+    image: '/portfolio/028_Social-Media-Post-Design-for-Wizspeed-Website-Design-1.webp',
     gallery: [
-      '/portfolio/028_Social-Media-Post-Design-for-Wizspeed-Website-Design.webp',
       '/portfolio/028_Social-Media-Post-Design-for-Wizspeed-Website-Design-1.webp',
-      '/portfolio/wizspeed-webdesign-social.jpg',
     ],
     client: 'Wizspeed',
     year: '2025',
