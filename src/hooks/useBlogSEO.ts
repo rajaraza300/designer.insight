@@ -12,7 +12,32 @@ function toIsoDate(date: string) {
 
 export function useBlogSEO(post: BlogPost | null) {
   useEffect(() => {
-    if (!post) return;
+    if (!post) {
+      applySEO({
+        title: 'Design, Branding & Digital Strategy Blog | Designer Insight',
+        description: 'Read practical insights from Designer Insight on branding, creative technology, UI/UX, presentation design, digital strategy and modern marketing.',
+        canonicalUrl: `${BASE_URL}/blogs`,
+        ogType: 'website',
+        ogImage: DEFAULT_IMAGE,
+        twitterCard: 'summary_large_image',
+        keywords: ['design blog', 'branding insights', 'UI UX', 'creative technology', 'digital strategy'],
+        schemaJson: {
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          '@id': `${BASE_URL}/blogs#blog`,
+          name: 'Designer Insight Blog',
+          url: `${BASE_URL}/blogs`,
+          description: 'Design, branding and digital strategy insights from Designer Insight.',
+          publisher: {
+            '@type': 'Organization',
+            name: 'Designer Insight',
+            url: BASE_URL,
+          },
+          inLanguage: 'en',
+        },
+      });
+      return () => removeStructuredData('page-schema-jsonld');
+    }
 
     const canonicalUrl = `${BASE_URL}/blogs?post=${encodeURIComponent(post.id)}`;
     const image = post.image || DEFAULT_IMAGE;
