@@ -1,8 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageId } from '../types';
 import { PRICING_PLANS, FAQS_DATA } from '../data/siteData';
-import { Check, ArrowUpRight, Sparkles, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, ArrowUpRight, Sparkles, HelpCircle, ChevronDown, ChevronUp, Coins } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+const CURRENCIES = [
+  { code: 'USD', label: 'US Dollar' },
+  { code: 'PKR', label: 'Pakistani Rupee' },
+  { code: 'AED', label: 'UAE Dirham' },
+  { code: 'GBP', label: 'British Pound' },
+  { code: 'EUR', label: 'Euro' },
+  { code: 'CAD', label: 'Canadian Dollar' },
+  { code: 'AUD', label: 'Australian Dollar' },
+  { code: 'SAR', label: 'Saudi Riyal' },
+  { code: 'QAR', label: 'Qatari Riyal' },
+  { code: 'KWD', label: 'Kuwaiti Dinar' },
+  { code: 'BHD', label: 'Bahraini Dinar' },
+  { code: 'OMR', label: 'Omani Rial' },
+  { code: 'INR', label: 'Indian Rupee' },
+  { code: 'BDT', label: 'Bangladeshi Taka' },
+  { code: 'TRY', label: 'Turkish Lira' },
+  { code: 'JPY', label: 'Japanese Yen' },
+  { code: 'CNY', label: 'Chinese Yuan' },
+  { code: 'SGD', label: 'Singapore Dollar' },
+  { code: 'MYR', label: 'Malaysian Ringgit' },
+  { code: 'NZD', label: 'New Zealand Dollar' },
+  { code: 'CHF', label: 'Swiss Franc' },
+  { code: 'SEK', label: 'Swedish Krona' },
+  { code: 'NOK', label: 'Norwegian Krone' },
+  { code: 'DKK', label: 'Danish Krone' },
+  { code: 'ZAR', label: 'South African Rand' },
+] as const;
 
 interface PricingViewProps {
   onNavigate: (page: PageId) => void;
@@ -12,6 +40,46 @@ interface PricingViewProps {
 export const PricingView: React.FC<PricingViewProps> = ({ onNavigate, onOpenQuote }) => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<string | null>('faq-1');
+  const [currency, setCurrency] = useState('USD');
+  const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({ USD: 1 });
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadExchangeRates = async () => {
+      try {
+        const response = await fetch('https://open.er-api.com/v6/latest/USD');
+        if (!response.ok) return;
+
+        const data = await response.json();
+        if (isMounted && data?.rates) {
+          setExchangeRates({ ...data.rates, USD: 1 });
+        }
+      } catch {
+        // Keep USD pricing available if the live exchange-rate service is unavailable.
+      }
+    };
+
+    loadExchangeRates();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const formatPrice = (price: string) => {
+    if (price === 'Custom') return price;
+
+    const usdAmount = Number(price.replace(/[^0-9.]/g, ''));
+    const rate = exchangeRates[currency] ?? 1;
+    const convertedAmount = usdAmount * rate;
+
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency,
+      maximumFractionDigits: currency === 'JPY' ? 0 : 2,
+    }).format(convertedAmount);
+  };
 
   return (
     <div className="min-h-screen bg-[#070709] text-neutral-100 pt-32 pb-24 overflow-hidden">
@@ -41,29 +109,51 @@ export const PricingView: React.FC<PricingViewProps> = ({ onNavigate, onOpenQuot
             Choose the package designed for your growth stage. Transparent deliverables, guaranteed timelines, and zero hidden fees.
           </p>
 
-          {/* Monthly / Annual Billing Toggle */}
-          <div className="pt-6 flex items-center justify-center gap-3">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-neutral-400'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-14 h-7 rounded-full bg-neutral-800 border border-neutral-700 p-1 transition-colors focus:outline-none cursor-pointer"
-            >
-              <div
-                className={`w-5 h-5 rounded-full bg-[#f84900] transition-transform ${
-                  isAnnual ? 'translate-x-7 bg-[#ff7a38]' : 'translate-x-0'
-                }`}
-              />
-            </button>
-            <div className="flex items-center gap-2">
-              <span className={`text-sm font-medium ${isAnnual ? 'text-white' : 'text-neutral-400'}`}>
-                Annual
+          {/* Billing & Currency Controls */}
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-3">
+              <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-neutral-400'}`}>
+                Monthly
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-[#f84900]/20 text-[#f84900] text-[11px] font-bold">
-                Save 20%
-              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className="relative w-14 h-7 rounded-full bg-neutral-800 border border-neutral-700 p-1 transition-colors focus:outline-none cursor-pointer"
+              >
+                <div
+                  className={`w-5 h-5 rounded-full bg-[#f84900] transition-transform ${
+                    isAnnual ? 'translate-x-7 bg-[#ff7a38]' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+              <div className="flex items-center gap-2">
+                <span className={`text-sm font-medium ${isAnnual ? 'text-white' : 'text-neutral-400'}`}>
+                  Annual
+                </span>
+                <span className="px-2 py-0.5 rounded-full bg-[#f84900]/20 text-[#f84900] text-[11px] font-bold">
+                  Save 20%
+                </span>
+              </div>
             </div>
+
+            <div className="hidden sm:block h-7 w-px bg-neutral-800" />
+
+            <label className="relative flex items-center gap-2">
+              <Coins className="w-4 h-4 text-[#f84900] pointer-events-none" />
+              <span className="text-sm text-neutral-400">Currency</span>
+              <select
+                value={currency}
+                onChange={(event) => setCurrency(event.target.value)}
+                className="appearance-none min-w-[150px] rounded-xl bg-neutral-900 border border-neutral-700 hover:border-[#f84900]/60 focus:border-[#f84900] focus:outline-none text-white text-sm font-semibold pl-3 pr-9 py-2.5 cursor-pointer transition-colors"
+                aria-label="Select pricing currency"
+              >
+                {CURRENCIES.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.code} — {item.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3 w-4 h-4 text-neutral-400 pointer-events-none" />
+            </label>
           </div>
         </motion.div>
       </section>
@@ -72,7 +162,8 @@ export const PricingView: React.FC<PricingViewProps> = ({ onNavigate, onOpenQuot
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {PRICING_PLANS.map((plan, idx) => {
-            const price = isAnnual ? plan.annualPrice : plan.monthlyPrice;
+            const basePrice = isAnnual ? plan.annualPrice : plan.monthlyPrice;
+            const price = formatPrice(basePrice);
             return (
               <motion.div
                 key={plan.id}
