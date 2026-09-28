@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageId, BlogPost } from '../types';
 import { BLOG_POSTS } from '../data/siteData';
 import { Sparkles, Calendar, Clock, User, ArrowUpRight, X, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './ImageWithFallback';
+import { useBlogSEO } from '../hooks/useBlogSEO';
 
 interface BlogsViewProps {
   onNavigate: (page: PageId) => void;
@@ -13,6 +14,36 @@ interface BlogsViewProps {
 export const BlogsView: React.FC<BlogsViewProps> = ({ onOpenQuote }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [readingPost, setReadingPost] = useState<BlogPost | null>(null);
+
+  useBlogSEO(readingPost);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const postId = params.get('post');
+    if (!postId) return;
+
+    const post = BLOG_POSTS.find((item) => item.id === postId);
+    if (post) setReadingPost(post);
+  }, []);
+
+  const openPost = (post: BlogPost) => {
+    setReadingPost(post);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('post', post.id);
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
+
+  const closePost = () => {
+    setReadingPost(null);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('post');
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
 
   const categories = [
     'All',
@@ -93,7 +124,7 @@ export const BlogsView: React.FC<BlogsViewProps> = ({ onOpenQuote }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
               whileHover={{ y: -6 }}
-              onClick={() => setReadingPost(post)}
+              onClick={() => openPost(post)}
               className="group cursor-pointer rounded-3xl bg-neutral-950 border border-neutral-800 hover:border-[#f84900]/50 transition-all duration-300 flex flex-col justify-between shadow-xl hover:shadow-[0_0_30px_rgba(248,73,0,0.15)] overflow-hidden"
             >
               {post.image && (
@@ -174,7 +205,7 @@ export const BlogsView: React.FC<BlogsViewProps> = ({ onOpenQuote }) => {
                   </span>
                 </div>
                 <button
-                  onClick={() => setReadingPost(null)}
+                  onClick={closePost}
                   className="p-2 rounded-full bg-neutral-800 hover:bg-[#f84900] text-neutral-300 hover:text-white transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
@@ -216,7 +247,7 @@ export const BlogsView: React.FC<BlogsViewProps> = ({ onOpenQuote }) => {
                   </div>
                   <button
                     onClick={() => {
-                      setReadingPost(null);
+                      closePost();
                       onOpenQuote();
                     }}
                     className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#f84900] to-[#ff7a38] text-white font-bold text-xs cursor-pointer shadow-lg"
