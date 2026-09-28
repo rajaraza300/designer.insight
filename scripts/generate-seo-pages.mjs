@@ -129,3 +129,68 @@ for (const route of routes) {
 }
 
 console.log(`[seo] Generated static metadata shells for ${routes.length} routes.`);
+
+
+const readSource = (file) => {
+  const fullPath = path.resolve(file);
+  return fs.existsSync(fullPath) ? fs.readFileSync(fullPath, 'utf8') : '';
+};
+
+const extractIds = (source) => Array.from(source.matchAll(/\bid:\s*['"]([^'"]+)['"]/g), (match) => match[1]);
+
+const siteDataSource = readSource('src/data/siteData.ts');
+const portfolioSection = siteDataSource.includes('export const PORTFOLIO_PROJECTS')
+  ? siteDataSource.slice(
+      siteDataSource.indexOf('export const PORTFOLIO_PROJECTS'),
+      siteDataSource.indexOf('export const TEAM_MEMBERS'),
+    )
+  : '';
+const blogSection = siteDataSource.includes('export const BLOG_POSTS')
+  ? siteDataSource.slice(
+      siteDataSource.indexOf('export const BLOG_POSTS'),
+      siteDataSource.indexOf('export const TESTIMONIALS_DATA'),
+    )
+  : '';
+
+const projectIds = Array.from(new Set([
+  ...extractIds(portfolioSection),
+  ...extractIds(readSource('src/data/socialMediaProjects.ts')),
+  ...extractIds(readSource('src/data/presentationProjects.ts')),
+]));
+const blogIds = Array.from(new Set(extractIds(blogSection)));
+
+const lastmod = new Date().toISOString().slice(0, 10);
+const sitemapEntries = [
+  ...routes.map((route) => ({
+    loc: `${BASE_URL}${route.path}`,
+    priority: route.path === '/' ? '1.0' : route.path === '/services' || route.path === '/portfolio' ? '0.9' : '0.8',
+    changefreq: route.path === '/' || route.path === '/portfolio' || route.path === '/blogs' ? 'weekly' : 'monthly',
+  })),
+  ...projectIds.map((id) => ({
+    loc: `${BASE_URL}/portfolio?project=${encodeURIComponent(id)}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+  })),
+  ...blogIds.map((id) => ({
+    loc: `${BASE_URL}/blogs?post=${encodeURIComponent(id)}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+  })),
+];
+
+const sitemapXml = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...sitemapEntries.map(({ loc, priority, changefreq }) =>
+    `  <url><loc>${loc.replaceAll('&', '&amp;')}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`
+  ),
+  '</urlset>',
+  '',
+].join('\n');
+
+fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml);
+fs.writeFileSync(
+  path.join(distDir, 'robots.txt'),
+  `User-agent: *\nAllow: /\n\nSitemap: ${BASE_URL}/sitemap.xml\n`,
+);
+console.log(`[seo] Sitemap includes ${sitemapEntries.length} indexable URLs.`);
