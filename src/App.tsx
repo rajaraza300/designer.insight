@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
 import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { getPageFromPathname, getPagePath } from './utils/routes';
+import { usePageSEO } from './hooks/usePageSEO';
 
 const AboutView = lazy(() => import('./components/AboutView').then((module) => ({ default: module.AboutView })));
 const ServicesView = lazy(() => import('./components/ServicesView').then((module) => ({ default: module.ServicesView })));
@@ -23,6 +24,8 @@ const AppContent: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState<boolean>(false);
   const { isDark } = useTheme();
+
+  usePageSEO(activePage);
 
   // Scroll to top when page changes
   const handleNavigate = (page: PageId) => {
