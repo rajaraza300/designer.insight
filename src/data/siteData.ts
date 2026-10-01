@@ -154,8 +154,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'paperpals-brand-guidelines',
     title: 'PaperPals Brand Guidelines & Packaging',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/paperpals-brand-guidelines.jpg',
     client: 'PaperPals Eco Products',
     year: '2025',
@@ -218,8 +218,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'amiras-furniture-brand-manual',
     title: "Amira's Furniture Brand Identity Manual",
-    category: 'Logo Design',
-    categoryLabel: '/ Logo Design & Brand Guidelines',
+    category: 'Brand Identity',
+    categoryLabel: '/ Brand Identity Manual',
     image: '/portfolio/amiras-furniture-brand-manual.webp',
     gallery: [
       '/portfolio/amiras-furniture-brand-manual.webp',
@@ -405,8 +405,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'empiric-brand-identity',
     title: 'Empiric Brand Identity',
-    category: 'Logo Design',
-    categoryLabel: '/ Logo Design & Brand Guidelines',
+    category: 'Brand Identity',
+    categoryLabel: '/ Brand Identity',
     image: '/uploads/Empiric-Brand-Identity-Designed-by-Designer-Insight.webp',
     client: 'Empiric Ventures',
     year: '2024',
