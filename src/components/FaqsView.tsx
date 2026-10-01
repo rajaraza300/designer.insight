@@ -65,7 +65,7 @@ export const FaqsView: React.FC<FaqsViewProps> = ({ onNavigate, onOpenQuote }) =
         '@type': 'Organization',
         name: 'Designer Insight',
         url: origin,
-        logo: `${origin}/Designer-Insight-Logo-White-1.png`,
+        logo: `${origin}/designer-insight-logo-white.webp`,
       },
       mainEntity: FAQS_DATA.map((faq) => ({
         '@type': 'Question',

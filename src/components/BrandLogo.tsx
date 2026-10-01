@@ -41,7 +41,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <div className={`inline-flex items-center shrink-0 select-none group ${className}`}>
         <img
-          src="/favicon.svg"
+          src="/favicon.png"
           alt="Designer Insight Icon"
           className={`${iconHeightClasses} object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(248,73,0,0.35)]`}
           loading="eager"
@@ -52,8 +52,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
 
   const logoSrc =
     effectiveVariant === 'dark'
-      ? '/Designer-Insight-Logo-Dark-1.svg'
-      : '/Designer-Insight-Logo-White-1.svg';
+      ? '/designer-insight-logo-dark.webp'
+      : '/designer-insight-logo-white.webp';
 
   return (
     <div className={`inline-flex items-center select-none group ${className}`}>

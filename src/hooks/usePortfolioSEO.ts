@@ -42,7 +42,7 @@ export function usePortfolioSEO({ selectedCategory, projects, activeProject }: P
           '@type': 'Organization',
           name: 'Designer Insight',
           url: origin,
-          logo: `${origin}/Designer-Insight-Logo-White-1.png`,
+          logo: `${origin}/designer-insight-logo-white.webp`,
           sameAs: [
             'https://www.facebook.com/designerinsight53/',
             'https://www.instagram.com/designerinsight_/',
