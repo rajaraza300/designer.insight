@@ -265,8 +265,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'round-cube-brand-guidelines',
     title: 'Round Cube Pvt. Ltd Brand Identity Manual',
-    category: 'Logo Design',
-    categoryLabel: '/ Logo Design & Brand Guidelines',
+    category: 'Brand Identity',
+    categoryLabel: '/ Brand Identity & Guidelines',
     image: '/portfolio/round-cube-brand-guidelines.png',
     gallery: [
       '/portfolio/round-cube-brand-guidelines.png',

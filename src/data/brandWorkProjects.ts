@@ -53,9 +53,5 @@ export const BRAND_IDENTITY_STATIONERY_PROJECTS: PortfolioProject[] = [
   identityProject('am-marketing', 'AM Marketing Brand Identity', 'AM Marketing', 'https://www.behance.net/gallery/222091917/Professional-Brand-Identity-Design-for-AM-Marketing'),
   identityProject('aaa-square', 'AAA Square Corporate Identity', 'AAA Square', 'https://www.behance.net/gallery/222087643/Minimal-Brand-Identity-Design-for-Real-Estate-Client'),
   identityProject('altura-builders', 'Altura Builders Brand Identity', 'Altura Builders', 'https://www.behance.net/gallery/221428659/Professional-Brand-Identity-design-for-Altura-Builders'),
-  {
-    ...identityProject('round-cube', 'Round Cube Corporate Identity', 'Round Cube Pvt. Ltd', 'https://www.behance.net/gallery/222086261/Minimal-Logo-Design-for-Round-Cube-Client'),
-    category: 'Logo Design',
-    categoryLabel: '/ Logo Design & Brand Guidelines',
-  },
+  identityProject('round-cube', 'Round Cube Corporate Identity', 'Round Cube Pvt. Ltd', 'https://www.behance.net/gallery/222086261/Minimal-Logo-Design-for-Round-Cube-Client'),
 ];
