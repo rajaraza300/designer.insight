@@ -68,13 +68,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
         }
       }
     }
-    return result.slice(0, 9);
+    return result.slice(0, 8);
   }, []);
 
   const filteredProjects =
     portfolioFilter === 'All'
       ? allMixedProjects
-      : PORTFOLIO_PROJECTS.filter((p) => p.category === portfolioFilter).slice(0, 9);
+      : PORTFOLIO_PROJECTS.filter((p) => p.category === portfolioFilter).slice(0, 8);
 
   const categories = [
     'All',

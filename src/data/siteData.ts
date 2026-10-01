@@ -11,6 +11,7 @@ import {
 } from '../types';
 import { SOCIAL_MEDIA_PROJECTS } from './socialMediaProjects';
 import { PRESENTATION_PROJECTS } from './presentationProjects';
+import { BEHANCE_PROJECTS } from './behanceProjects';
 
 // Official Designer Insight Logo & Favicon Assets
 export const SITE_CONFIG = {
@@ -143,6 +144,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
+  // --- LATEST VERIFIED WORK FROM RAJA RAZA'S BEHANCE ---
+  ...BEHANCE_PROJECTS,
   // --- 13 NEW & VERIFIED DESIGNER INSIGHT PORTFOLIO WORKS ---
   {
     id: 'paperpals-brand-guidelines',
@@ -346,19 +349,20 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
   {
     id: 'f1-amore-homes-panaflex-design',
-    title: 'Professional Panaflex Design for Real Estate & Marketing',
+    title: 'Modern Panaflex Design',
     category: 'Print & Packaging',
     categoryLabel: '/ Outdoor & Panaflex Signage',
-    image: '/portfolio/f1-amore-homes-panaflex-design.jpeg',
+    image: '/portfolio/behance/modern-panaflex-design-cover.webp',
     gallery: [
-      '/portfolio/f1-amore-homes-panaflex-design.jpeg',
-      '/portfolio/f1-marketing-flyer-ramadan-calendar.jpg',
-      '/portfolio/280a32252434561.Y3JvcCwxNDE2LDExMDgsMCww.jpeg',
+      '/portfolio/behance/modern-panaflex-design-cover.webp',
+      '/portfolio/behance/modern-panaflex-design-01.webp',
+      '/portfolio/behance/modern-panaflex-design-02.webp',
+      '/portfolio/behance/modern-panaflex-design-03.webp',
     ],
-    client: 'F1 Marketing & Amore Homes',
-    year: '2025',
-    behanceUrl: 'https://www.behance.net/gallery/252434561',
-    overview: 'Large-format outdoor panaflex billboard and booking office signage designed by Designer Insight ("Clean. Modern. Impactful."). Designed for F1 Marketing (Authorized Sales Partner of New City Paradise) and Amore Homes Real Estate & Builders.',
+    client: 'Amore Homes',
+    year: '2026',
+    behanceUrl: 'https://www.behance.net/gallery/252434561/Modern-Panaflex-Design',
+    overview: 'A bold outdoor advertising system combining clean layouts, striking visuals, and strategic typography for storefronts, property campaigns, and promotional events.',
     deliverables: [
       'Outdoor Panaflex Billboards',
       'Booking Office Signage',
@@ -369,14 +373,20 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
   {
     id: 'f1-marketing-flyer-ramadan-calendar',
-    title: 'Professional Flyer & Ramadan Calendar Design',
+    title: 'Creative Marketing Flyer Design',
     category: 'Print & Packaging',
     categoryLabel: '/ Print Collateral & Flyer',
-    image: '/portfolio/f1-marketing-flyer-ramadan-calendar.jpg',
-    client: 'F1 Marketing (New City Paradise)',
-    year: '2025',
-    behanceUrl: 'https://www.behance.net/gallery/252142517',
-    overview: 'High-impact Islamic calendar and corporate marketing flyer designed by Designer Insight ("Clean. Modern. Impactful."). Features midnight navy & gold illuminated lanterns, dual Hanafi & Jafri Sehr/Iftar schedule tables, and promotional partner highlights.',
+    image: '/portfolio/behance/creative-marketing-flyer-design-cover.webp',
+    gallery: [
+      '/portfolio/behance/creative-marketing-flyer-design-cover.webp',
+      '/portfolio/behance/creative-marketing-flyer-design-01.webp',
+      '/portfolio/behance/creative-marketing-flyer-design-02.webp',
+      '/portfolio/behance/creative-marketing-flyer-design-03.webp',
+    ],
+    client: 'F1 Marketing',
+    year: '2026',
+    behanceUrl: 'https://www.behance.net/gallery/252142517/Creative-Marketing-Flyer-Design',
+    overview: 'A high-impact marketing flyer system combining modern aesthetics, strategic layouts, and clear visual hierarchy to strengthen campaign messaging.',
     deliverables: [
       'Corporate Ramadan Calendars',
       'Dual-Fiqh Prayer Timetables',

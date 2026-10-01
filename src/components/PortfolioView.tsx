@@ -28,12 +28,16 @@ const CATEGORY_TABS: FilterTab[] = [
   { id: 'Social Media', label: 'Social Media', matchCategories: ['Social Media'] },
 ];
 
+const INITIAL_PROJECT_COUNT = 12;
+const LOAD_MORE_COUNT = 9;
+
 export const PortfolioView: React.FC<PortfolioViewProps> = ({
   onOpenProject,
   onOpenQuote,
   activeProject,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [visibleCount, setVisibleCount] = useState(INITIAL_PROJECT_COUNT);
 
   // Check URL search parameters on mount for deep-linked project or category
   useEffect(() => {
@@ -102,6 +106,15 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
     return PORTFOLIO_PROJECTS.filter((p) => tab.matchCategories.includes(p.category));
   }, [selectedCategory, allMixedProjects]);
 
+  const visibleProjects = React.useMemo(
+    () => filteredProjects.slice(0, visibleCount),
+    [filteredProjects, visibleCount],
+  );
+
+  useEffect(() => {
+    setVisibleCount(INITIAL_PROJECT_COUNT);
+  }, [selectedCategory]);
+
   // Apply dynamic meta tags and Schema.org JSON-LD structured data for search engine indexing
   usePortfolioSEO({
     selectedCategory,
@@ -111,6 +124,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
 
   const handleSelectCategory = (catId: string) => {
     setSelectedCategory(catId);
+    setVisibleCount(INITIAL_PROJECT_COUNT);
     if (typeof window !== 'undefined' && window.history) {
       const url = new URL(window.location.href);
       if (catId === 'All') {
@@ -208,7 +222,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
           {/* Active Filter Status & Quick Reset */}
           <div className="flex items-center justify-between text-xs text-neutral-400 pt-1 border-t border-neutral-900">
             <span>
-              Showing <strong className="text-white">{filteredProjects.length}</strong> {filteredProjects.length === 1 ? 'project' : 'projects'} in <strong className="text-[#f84900]">{selectedCategory}</strong>
+              Showing <strong className="text-white">{visibleProjects.length}</strong> of <strong className="text-white">{filteredProjects.length}</strong> {filteredProjects.length === 1 ? 'project' : 'projects'} in <strong className="text-[#f84900]">{selectedCategory}</strong>
             </span>
             {selectedCategory !== 'All' && (
               <button
@@ -228,14 +242,14 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredProjects.map((project, idx) => (
+          {visibleProjects.map((project, idx) => (
             <motion.div
               layout
               key={project.id}
               id={`portfolio-project-card-${project.id}`}
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              transition={{ duration: 0.4, delay: Math.min(idx, 8) * 0.05 }}
               whileHover={{ y: -8, scale: 1.025 }}
               onClick={() => handleOpenProject(project)}
               className="group cursor-pointer rounded-3xl overflow-hidden bg-neutral-950 border border-neutral-800/90 hover:border-[#f84900]/70 transition-all duration-300 flex flex-col shadow-xl shadow-black/40 hover:shadow-[0_22px_50px_-10px_rgba(248,73,0,0.3),0_0_30px_rgba(248,73,0,0.15)] will-change-transform"
@@ -297,6 +311,22 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
             </motion.div>
           ))}
         </motion.div>
+
+        {visibleCount < filteredProjects.length && (
+          <div className="flex flex-col items-center gap-3 mt-12">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((count) => count + LOAD_MORE_COUNT)}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-[#f84900]/50 bg-[#f84900]/10 hover:bg-[#f84900] text-[#f84900] hover:text-white text-sm font-bold transition-all duration-300 shadow-lg shadow-[#f84900]/10 hover:shadow-[#f84900]/25 cursor-pointer"
+            >
+              Load More Projects
+              <ArrowUpRight className="w-4 h-4" />
+            </button>
+            <span className="text-xs text-neutral-500">
+              {filteredProjects.length - visibleProjects.length} more projects available
+            </span>
+          </div>
+        )}
       </section>
 
       {/* CTA Box */}
