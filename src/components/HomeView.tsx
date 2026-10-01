@@ -513,7 +513,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     width={1200}
                     height={900}
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 will-change-transform"
+                    containerClassName="w-full h-full"
+                    className="w-full h-full object-cover object-center scale-[1.02] transition-transform duration-700 ease-out group-hover:scale-[1.09] will-change-transform"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 p-4">
                     <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#f84900] to-[#ff6a1a] text-white font-bold text-xs shadow-lg transform translate-y-2 group-hover:translate-y-0 group-hover:scale-105 transition-all duration-300">
