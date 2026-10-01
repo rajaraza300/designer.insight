@@ -36,7 +36,7 @@ export interface ServiceItem {
 export interface PortfolioProject {
   id: string;
   title: string;
-  category: 'Brand Identity' | 'UI/UX Design' | 'Social Media' | 'Presentation Design' | 'Web Design' | 'Print & Packaging';
+  category: 'Logo Design' | 'Brand Identity' | 'UI/UX Design' | 'Social Media' | 'Presentation Design' | 'Web Design' | 'Print & Packaging';
   categoryLabel: string;
   image: string;
   gallery?: string[];

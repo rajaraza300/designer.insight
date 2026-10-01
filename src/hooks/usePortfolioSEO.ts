@@ -100,6 +100,7 @@ export function usePortfolioSEO({ selectedCategory, projects, activeProject }: P
     // 2. Portfolio Collection View (Filtered or All)
     const categoryTitleMap: Record<string, string> = {
       All: 'Design Portfolio & Selected Works | Designer Insight Agency',
+      'Logo Design': 'Logo Design Portfolio | Designer Insight',
       'Brand Identity': 'Brand Identity & Logo Design Portfolio | Designer Insight',
       'UI/UX Design': 'UI/UX & Product Design Portfolio | Designer Insight',
       'Web Design': 'WordPress & Shopify Web Design Portfolio | Designer Insight',
@@ -112,6 +113,7 @@ export function usePortfolioSEO({ selectedCategory, projects, activeProject }: P
 
     const categoryDescMap: Record<string, string> = {
       All: 'Explore our curated portfolio of bold brand identities, high-converting websites, investor pitch decks, and digital experiences by Designer Insight.',
+      'Logo Design': 'Explore original logo concepts, marks, typography, and presentation systems created for real Designer Insight clients.',
       'Brand Identity': 'Browse bespoke logo systems, visual brand guidelines, and typography identity projects designed for fast-growing global brands.',
       'UI/UX Design': 'Discover modern, accessible UI/UX app interfaces, digital prototypes, and user experiences crafted with precision.',
       'Web Design': 'Explore custom responsive websites, WordPress architectures, and high-converting Shopify digital storefronts.',

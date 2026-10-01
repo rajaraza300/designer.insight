@@ -12,6 +12,7 @@ import {
 import { SOCIAL_MEDIA_PROJECTS } from './socialMediaProjects';
 import { PRESENTATION_PROJECTS } from './presentationProjects';
 import { BEHANCE_PROJECTS } from './behanceProjects';
+import { LOGO_DESIGN_PROJECTS, BRAND_IDENTITY_STATIONERY_PROJECTS } from './brandWorkProjects';
 
 // Official Designer Insight Logo & Favicon Assets
 export const SITE_CONFIG = {
@@ -146,6 +147,9 @@ export const PROCESS_STEPS: ProcessStep[] = [
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   // --- LATEST VERIFIED WORK FROM RAJA RAZA'S BEHANCE ---
   ...BEHANCE_PROJECTS,
+  // --- LOGO DESIGN & BRAND IDENTITY WORK FROM DESIGNER INSIGHT'S BEHANCE ---
+  ...LOGO_DESIGN_PROJECTS,
+  ...BRAND_IDENTITY_STATIONERY_PROJECTS,
   // --- 13 NEW & VERIFIED DESIGNER INSIGHT PORTFOLIO WORKS ---
   {
     id: 'paperpals-brand-guidelines',
@@ -168,8 +172,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'amore-homes-brand-guidelines',
     title: 'Amore Homes Brand Guidelines & Architectural Identity',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/amore-homes-brand-guidelines.jpg',
     gallery: [
       '/portfolio/amore-homes-brand-guidelines.jpg',
@@ -191,8 +195,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'health-care-brand-guidelines',
     title: 'Health Care Brand Identity & Clinical Guidelines',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/health-care-brand-guidelines.png',
     gallery: [
       '/portfolio/health-care-brand-guidelines.png',
@@ -214,8 +218,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'amiras-furniture-brand-manual',
     title: "Amira's Furniture Brand Identity Manual",
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/amiras-furniture-brand-manual.webp',
     gallery: [
       '/portfolio/amiras-furniture-brand-manual.webp',
@@ -238,8 +242,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'nano-wrap-brand-guidelines',
     title: 'Nano Wrap Paint Protection Film Brand Guidelines',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/nano-wrap-brand-guidelines.png',
     gallery: [
       '/portfolio/nano-wrap-brand-guidelines.png',
@@ -261,8 +265,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'round-cube-brand-guidelines',
     title: 'Round Cube Pvt. Ltd Brand Identity Manual',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/round-cube-brand-guidelines.png',
     gallery: [
       '/portfolio/round-cube-brand-guidelines.png',
@@ -283,8 +287,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'a-executive-chauffeur-brand-guidelines',
     title: 'A Executive Chauffeur Service Brand Guidelines',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/a-executive-chauffeur-brand-guidelines.png',
     gallery: [
       '/portfolio/a-executive-chauffeur-brand-guidelines.png',
@@ -305,8 +309,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'mega-drive-destructions-brand-guidelines',
     title: 'Mega Drive Destructions Brand Guidelines',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity Manual',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/portfolio/mega-drive-destructions-brand-guidelines.png',
     gallery: [
       '/portfolio/mega-drive-destructions-brand-guidelines.png',
@@ -401,8 +405,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'empiric-brand-identity',
     title: 'Empiric Brand Identity',
-    category: 'Brand Identity',
-    categoryLabel: '/ Brand Identity',
+    category: 'Logo Design',
+    categoryLabel: '/ Logo Design & Brand Guidelines',
     image: '/uploads/Empiric-Brand-Identity-Designed-by-Designer-Insight.webp',
     client: 'Empiric Ventures',
     year: '2024',

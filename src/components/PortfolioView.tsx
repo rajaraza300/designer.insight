@@ -21,6 +21,7 @@ interface FilterTab {
 
 const CATEGORY_TABS: FilterTab[] = [
   { id: 'All', label: 'All', matchCategories: [] },
+  { id: 'Logo Design', label: 'Logo Design', matchCategories: ['Logo Design'] },
   { id: 'Brand Identity', label: 'Brand Identity', matchCategories: ['Brand Identity'] },
   { id: 'Web Design', label: 'Web Design', matchCategories: ['Web Design', 'UI/UX Design'] },
   { id: 'Presentation', label: 'Presentation', matchCategories: ['Presentation Design', 'Presentation'] },
@@ -69,6 +70,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
   // Curate a balanced mix across all categories for the "All" view in Portfolio
   const allMixedProjects = React.useMemo(() => {
     const categoryOrder: Array<PortfolioProject['category']> = [
+      'Logo Design',
       'Brand Identity',
       'Social Media',
       'Presentation Design',

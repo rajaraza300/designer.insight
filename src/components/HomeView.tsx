@@ -45,6 +45,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   // Curate a balanced mix across all categories for the "All" view on Home
   const allMixedProjects = React.useMemo(() => {
     const categoryOrder: Array<PortfolioProject['category']> = [
+      'Logo Design',
       'Brand Identity',
       'Social Media',
       'Presentation Design',
@@ -78,6 +79,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
   const categories = [
     'All',
+    'Logo Design',
     'Brand Identity',
     'Print & Packaging',
     'Social Media',
