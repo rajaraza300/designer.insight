@@ -327,7 +327,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'health-care-stationery-collateral',
     title: 'Health Care Corporate Stationery Suite',
-    category: 'Print & Packaging',
+    category: 'Brand Identity',
     categoryLabel: '/ Corporate Identity Kit',
     image: '/portfolio/health-care-stationery-collateral.png',
     gallery: [

@@ -38,8 +38,8 @@ export const BEHANCE_PROJECTS: PortfolioProject[] = [
   {
     id: 'professional-business-stamp-design',
     title: 'Professional Business Stamp Design',
-    category: 'Brand Identity',
-    categoryLabel: '/ Corporate Identity',
+    category: 'Print & Packaging',
+    categoryLabel: '/ Business Stamp & Printing',
     image: '/portfolio/behance/professional-business-stamp-design-cover.webp',
     gallery: gallery('professional-business-stamp-design'),
     client: 'Designer Insight Client',
