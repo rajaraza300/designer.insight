@@ -522,6 +522,16 @@ export const TEAM_MEMBERS: TeamMember[] = [
     },
   },
   {
+    id: 'haroon-malik',
+    name: 'Haroon Malik',
+    role: 'Creative Designer',
+    image: '/uploads/Haroon-Malik.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/company/designerinsight',
+      instagram: 'https://www.instagram.com/designerinsight_',
+    },
+  },
+  {
     id: 'nayab-ismail',
     name: 'Nayab Ismail',
     role: 'Graphic Designer',
