@@ -512,16 +512,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     },
   },
   {
-    id: 'eiza-batool',
-    name: 'Eiza Batool',
-    role: 'Graphic Designer',
-    image: '/uploads/Untitled-design.webp',
-    socials: {
-      linkedin: 'https://www.linkedin.com/company/designerinsight',
-      instagram: 'https://www.instagram.com/designerinsight_',
-    },
-  },
-  {
     id: 'haroon-malik',
     name: 'Haroon Malik',
     role: 'Creative Designer',
@@ -530,48 +520,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
     },
-  },
-  {
-    id: 'nayab-ismail',
-    name: 'Nayab Ismail',
-    role: 'Graphic Designer',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'emaan-qamar',
-    name: 'Emaan Qamar',
-    role: 'Graphic Designer - Internee',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'raed-hayat',
-    name: 'Raed Hayat',
-    role: 'Graphic Designer',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'dyas-kardinal',
-    name: 'Dyas Kardinal',
-    role: 'Creative Director',
-    image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'elsa-verina',
-    name: 'Elsa Verina',
-    role: 'UI/UX Designer',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'kumto-warming',
-    name: 'Kumto Warming',
-    role: 'Art Director',
-    image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=500&q=80',
-  },
-  {
-    id: 'harumi',
-    name: 'Harumi',
-    role: 'Web Developer',
-    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80',
   },
 ];
 
