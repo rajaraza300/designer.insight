@@ -357,34 +357,28 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           </div>
 
           {/* Footer Actions */}
-          <div className="p-4 sm:p-6 border-t border-neutral-800 bg-neutral-950/90 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs sm:text-sm text-neutral-400 text-center sm:text-left">
+          <div className="p-4 sm:p-6 border-t border-neutral-800 bg-neutral-950/90 flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-6">
+            <p className="text-xs sm:text-sm text-neutral-400 text-center lg:text-left lg:max-w-sm">
               Inspired by this project? Let's engineer something iconic together.
             </p>
-            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <div className={`grid grid-cols-1 gap-3 w-full lg:w-auto ${project.behanceUrl ? 'sm:grid-cols-2' : ''}`}>
               {project.behanceUrl && (
                 <a
                   href={project.behanceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0057ff]/15 hover:bg-[#0057ff]/25 text-[#3b82f6] hover:text-white border border-[#0057ff]/40 text-sm font-semibold transition-all cursor-pointer"
+                  className="w-full sm:min-w-[190px] h-11 inline-flex items-center justify-center gap-2 px-5 rounded-xl bg-[#0057ff]/15 hover:bg-[#0057ff]/25 text-[#60a5fa] hover:text-white border border-[#0057ff]/50 text-sm font-semibold transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
                 >
                   <span>View on Behance</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               )}
-              <button
-                onClick={onClose}
-                className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-sm font-medium transition-colors cursor-pointer"
-              >
-                Close
-              </button>
               <button
                 onClick={() => {
                   onClose();
                   onOpenQuote();
                 }}
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#f84900] to-[#ff7a38] text-white text-sm font-bold transition-all shadow-lg shadow-[#f84900]/30 cursor-pointer"
+                className="w-full sm:min-w-[210px] h-11 inline-flex items-center justify-center gap-2 px-6 rounded-xl bg-gradient-to-r from-[#f84900] to-[#ff7a38] hover:from-[#ff5a16] hover:to-[#ff8a50] text-white text-sm font-bold transition-all shadow-lg shadow-[#f84900]/30 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f84900] focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               >
                 <span>Start Similar Project</span>
                 <ArrowUpRight className="w-4 h-4" />
