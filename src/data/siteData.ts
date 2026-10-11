@@ -441,11 +441,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     },
   },
   {
-    id: 'sajjal-mughal',
-    name: 'Sajjal Mughal',
-    role: 'Business Development Manager',
-    image: '/uploads/Sajjal-Mughal-scaled.webp',
-    isLeadership: true,
+    id: 'sharyar-mughal',
+    name: 'Sharyar Mughal',
+    role: 'Graphic Designer & Video Editor',
+    image: '/uploads/Sharyar-Mughal.webp',
+    isLeadership: false,
     socials: {
       linkedin: 'https://www.linkedin.com/company/designerinsight',
       instagram: 'https://www.instagram.com/designerinsight_',
