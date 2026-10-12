@@ -334,6 +334,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onOpenQuote })
                     {member.name}
                   </h3>
                   <p className="text-xs text-neutral-400 mt-0.5">{member.role}</p>
+                  {member.experience && (
+                    <p className="text-xs text-neutral-500 mt-2">{member.experience}</p>
+                  )}
                 </div>
                 {member.isLeadership ? (
                   <div className="mt-3 pt-2 border-t border-neutral-900 flex items-center gap-1.5 text-[11px] text-[#f84900] font-semibold">

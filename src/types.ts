@@ -52,6 +52,7 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
+  experience?: string;
   image: string;
   isLeadership?: boolean;
   socials?: {

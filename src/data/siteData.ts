@@ -443,7 +443,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'sharyar-mughal',
     name: 'Sharyar Mughal',
-    role: 'Graphic Designer & Video Editor',
+    role: 'Web Designer',
+    experience: 'Designer Insight · September 2025–Present',
     image: '/uploads/Sharyar-Mughal.webp',
     isLeadership: false,
     socials: {
